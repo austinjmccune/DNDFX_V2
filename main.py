@@ -22,17 +22,23 @@ def cast(spell,origin,grid):
             shape = x.find('shape').text
             color = x.find('color').text
             set_led(origin,area,shape,color)
-            tup = find_in_list_of_list(grid,origin)
-            one, two = tup
-            grid[one][two] = 'x'
-            print(grid)
-
-
-
+            set_aoe(grid,origin,area)
 
 
 def set_led(origin,area,shape,color):
     print("lights turned {} in a {} foot {} centered at {}!".format(color,area,shape,origin))
+
+
+def set_aoe(grid,origin,area):
+    tup = find_in_list_of_list(grid,origin)
+    c , r = tup
+    if area == 20:
+        grid[c][r] = 'x'
+        grid[c-1][r-1]
+        grid[c+1][r+1] = 'x'
+
+    for i in range(4):
+        print(grid[i])
 
 def make_grid(r):
     linea = []
