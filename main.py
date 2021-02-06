@@ -32,12 +32,22 @@ def set_led(origin,area,shape,color):
 def set_aoe(grid,origin,area):
     tup = find_in_list_of_list(grid,origin)
     c , r = tup
-    if area == 20:
+    if area == 10:
         grid[c][r] = 'x'
-        grid[c-1][r-1]
+        for i in range(2):
+            grid[c+i][r] = 'x'
+            grid[c][r+i] = 'x'
+            grid[c+i][r+i] = 'x'
+            grid[c-i][r] = 'x'
+            grid[c][r-i] = 'x'
+            grid[c-i][r-i] = 'x'
+    elif area == 20:
+        grid[c][r] = 'x'
+        grid[c+1][r] = 'x'
+        grid[c][r+1] = 'x'
         grid[c+1][r+1] = 'x'
 
-    for i in range(4):
+    for i in range(12):
         print(grid[i])
 
 def make_grid(r):
@@ -45,19 +55,42 @@ def make_grid(r):
     lineb = []
     linec = []
     lined = []
+    linee = []
+    linef = []
+    lineg = []
+    lineh = []
+    linei = []
+    linej = []
+    linek = []
+    linel = []
     for i in range(r):
 
         linea.append("a{}".format(i))
         lineb.append("b{}".format(i))
         linec.append("c{}".format(i))
         lined.append("d{}".format(i))
-
+        linee.append("e{}".format(i))
+        linef.append("f{}".format(i))
+        lineg.append("g{}".format(i))
+        lineh.append("h{}".format(i))
+        linei.append("i{}".format(i))
+        linej.append("j{}".format(i))
+        linek.append("k{}".format(i))
+        linel.append("l{}".format(i))
 
     grid = []
     grid.append(list(linea))
     grid.append(list(lineb))
     grid.append(list(linec))
     grid.append(list(lined))
+    grid.append(list(linee))
+    grid.append(list(linef))
+    grid.append(list(lineg))
+    grid.append(list(lineh))
+    grid.append(list(linei))
+    grid.append(list(linej))
+    grid.append(list(linek))
+    grid.append(list(linel))
 
     return grid
 
@@ -67,7 +100,7 @@ def find_in_list_of_list(mylist, char):
             return (mylist.index(sub_list), sub_list.index(char))
     raise ValueError("'{char}' is not in list".format(char = char))
 
-grid = make_grid(6)
+grid = make_grid(12)
 spell = input('what spell do you want to cast?')
 origin = input('where would you like to cast it?')
 cast(spell,origin,grid)
