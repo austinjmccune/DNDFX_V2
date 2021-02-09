@@ -34,17 +34,21 @@ def draw_cube(grid,origin,area):
     tup = find_in_list_of_list(grid,origin)
     r , c = tup
     if area == 10:
-
         for i in range(4):
             grid[r-2][c+1-i] = 'x'
             grid[r+1][c+1-i] = 'x'
             grid[r][c+1-i] = 'x'
             grid[r-1][c+1-i] = 'x'
     elif area == 20:
-        grid[r][c] = 'x'
-        grid[r+1][c] = 'x'
-        grid[r][c+1] = 'x'
-        grid[r+1][c+1] = 'x'
+        for i in range(8):
+            grid[r-4][c+3-i] = 'x'
+            grid[r-3][c+3-i] = 'x'
+            grid[r-2][c+3-i] = 'x'
+            grid[r-1][c+3-i] = 'x'
+            grid[r][c+3-i] = 'x'
+            grid[r+1][c+3-i] = 'x'
+            grid[r+2][c+3-i] = 'x'
+            grid[r+3][c+3-i] = 'x'
 
     elif area == 5:
         grid[r][c] = 'x'

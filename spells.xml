@@ -1,13 +1,13 @@
 <data>
     <spell>
        <name>fireball</name>
-        <area>10</area>
+        <area>20</area>
         <shape>sphere</shape>
         <color>red</color>
     </spell>
     <spell>
-        <name>arms of hadar</name>
-        <area>10</area>
+        <name>test</name>
+        <area>5</area>
         <shape>sphere</shape>
         <color>purple</color>
     </spell>
