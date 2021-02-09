@@ -1,7 +1,7 @@
 <data>
     <spell>
        <name>fireball</name>
-        <area>20</area>
+        <area>5</area>
         <shape>sphere</shape>
         <color>red</color>
     </spell>

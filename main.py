@@ -22,30 +22,49 @@ def cast(spell,origin,grid):
             shape = x.find('shape').text
             color = x.find('color').text
             set_led(origin,area,shape,color)
-            set_aoe(grid,origin,area)
+            draw_cube(grid,origin,area)
 
 
 def set_led(origin,area,shape,color):
     print("lights turned {} in a {} foot {} centered at {}!".format(color,area,shape,origin))
 
 
-def set_aoe(grid,origin,area):
+
+def draw_cube(grid,origin,area):
     tup = find_in_list_of_list(grid,origin)
-    c , r = tup
+    r , c = tup
     if area == 10:
-        grid[c][r] = 'x'
+        grid[r][c] = 'x'
         for i in range(2):
-            grid[c+i][r] = 'x'
-            grid[c][r+i] = 'x'
-            grid[c+i][r+i] = 'x'
-            grid[c-i][r] = 'x'
-            grid[c][r-i] = 'x'
-            grid[c-i][r-i] = 'x'
+            grid[r+i][c] = 'x'
+            grid[r][c+i] = 'x'
+            grid[r+i][c+i] = 'x'
+            grid[r-i][c] = 'x'
+            grid[r][c-i] = 'x'
+            grid[r-i][c-i] = 'x'
     elif area == 20:
-        grid[c][r] = 'x'
-        grid[c+1][r] = 'x'
-        grid[c][r+1] = 'x'
-        grid[c+1][r+1] = 'x'
+        grid[r][c] = 'x'
+        grid[r+1][c] = 'x'
+        grid[r][c+1] = 'x'
+        grid[r+1][c+1] = 'x'
+
+    elif area == 5:
+        a = 2
+        grid[r][c] = 'x'
+        grid[r][c-1] = 'x'
+        grid[r-1][c-1] = 'x'
+        grid[r-1][c] = 'x'
+           #grid[r-2][c-1+i] = 'x'
+           #grid[r+1][c-1+i] = 'x'
+           # grid[r-2+i][c-1] = 'x'
+           # grid[r-2+i][c+2] = 'x'
+           # grid[r-1][c-1+i] = 'x'
+           # grid[r-1][c+1+i] = 'x'
+
+
+
+
+
 
     for i in range(12):
         print(grid[i])
