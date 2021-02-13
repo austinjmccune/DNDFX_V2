@@ -1,6 +1,7 @@
 import xml.etree.ElementTree as ET
 my_tree = ET.parse('spells.xml')
 my_root = my_tree.getroot()
+
 import time
 import board
 import neopixel
@@ -18,23 +19,40 @@ pixels = neopixel.NeoPixel(
     pixel_pin, num_pixels, brightness=0.2, auto_write=False, pixel_order=ORDER
 )
 
-def cast(spell,origin,grid):
+def cast(spell,origin,grid,dict):
     for x in my_root.findall('spell'):
         if spell == x.find('name').text:
             name = x.find('name').text
             area = int(x.find('area').text)
             shape = x.find('shape').text
             color = x.find('color').text
-            set_led(draw_cube(grid,origin,area))
+            set_led(draw_cube(grid,origin,area),dict)
 
 
+def assign_leds(grid):
+    led_dict = {}
+    rows = 4
+    columns = 6
+    control_num = 0
+    for i in range(rows):
+        if i == 0:
+            pass
+        else:
+            control_num = control_num + 6
 
-def set_led(grid):
-    print(grid)
-    pixels[0] = (255,255,0)
-    pixels[1] = (255, 255, 0)
-    pixels[2] = (255, 255, 0)
-    pixels.show()
+        for j in range(columns):
+            led_dict[grid[i][j]] = control_num + j
+    return led_dict
+def set_led(grid,dict):
+    #print(grid)
+    #print(dict)
+    for i in grid:
+        print(dict[i])
+        pixels[dict[i]] = (0,255,0)
+    #pixels[0] = (255,255,0)
+    #pixels[1] = (255, 255, 0)
+    #pixels[2] = (255, 255, 0)
+    #pixels.show()
     #print("lights turned {} in a {} foot {} centered at {}!".format(color,area,shape,origin))
 
 
@@ -74,22 +92,24 @@ def make_grid(r):
     lineb = []
     linec = []
     lined = []
-    linee = []
-    linef = []
+    #linee = []
+    #linef = []
     #lineg = []
     #lineh = []
     #linei = []
     #linej = []
     #linek = []
     #linel = []
-    for i in range(r):
+
+    #this is plus 2 because I am working with a rectangle at the moment.
+    for i in range(r+2):
 
         linea.append("a{}".format(i))
         lineb.append("b{}".format(i))
         linec.append("c{}".format(i))
         lined.append("d{}".format(i))
-        linee.append("e{}".format(i))
-        linef.append("f{}".format(i))
+        #linee.append("e{}".format(i))
+       #linef.append("f{}".format(i))
         #lineg.append("g{}".format(i))
         #lineh.append("h{}".format(i))
         #linei.append("i{}".format(i))
@@ -102,8 +122,8 @@ def make_grid(r):
     grid.append(list(lineb))
     grid.append(list(linec))
     grid.append(list(lined))
-    grid.append(list(linee))
-    grid.append(list(linef))
+    #grid.append(list(linee))
+    #grid.append(list(linef))
     #grid.append(list(lineg))
     #grid.append(list(lineh))
     #grid.append(list(linei))
@@ -119,12 +139,12 @@ def find_in_list_of_list(mylist, char):
             return (mylist.index(sub_list), sub_list.index(char))
     raise ValueError("'{char}' is not in list".format(char = char))
 
-grid = make_grid(6)
+grid = make_grid(4)
+led_dict = assign_leds(grid)
 spell = input('what spell do you want to cast?')
 origin = input('where would you like to cast it?')
-cast(spell,origin,grid)
-for i in range(6):
-    print(grid[i])
+cast(spell,origin,grid,led_dict)
+
 
 
 
