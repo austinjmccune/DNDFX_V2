@@ -148,9 +148,9 @@ def find_in_list_of_list(mylist, char):
 grid = make_grid(4)
 led_dict = assign_leds(grid)
 print(led_dict)
-#spell = input('what spell do you want to cast?')
-#origin = input('where would you like to cast it?')
-#cast(spell,origin,grid,led_dict)
+spell = input('what spell do you want to cast?')
+origin = input('where would you like to cast it?')
+cast(spell,origin,grid,led_dict)
 
 
 
