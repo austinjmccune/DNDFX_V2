@@ -1,18 +1,22 @@
 import xml.etree.ElementTree as ET
 my_tree = ET.parse('spells.xml')
 my_root = my_tree.getroot()
-''''
-for x in my_root.findall('spell'):
-    name = x.find('name').text
-    area = int(x.find('area').text)
-    shape = x.find('shape').text
-    color = x.find('color').text
-    print(name)
-    print(area)
-    print(shape)
-    print(color)
-    print("the spell name is {}".format(name))
-'''
+import time
+import board
+import neopixel
+
+pixel_pin = board.D10
+
+# The number of NeoPixels
+num_pixels = 24
+
+# The order of the pixel colors - RGB or GRB. Some NeoPixels have red and green reversed!
+# For RGBW NeoPixels, simply change the ORDER to RGBW or GRBW.
+ORDER = neopixel.GRB
+
+pixels = neopixel.NeoPixel(
+    pixel_pin, num_pixels, brightness=0.2, auto_write=False, pixel_order=ORDER
+)
 
 def cast(spell,origin,grid):
     for x in my_root.findall('spell'):
@@ -21,24 +25,28 @@ def cast(spell,origin,grid):
             area = int(x.find('area').text)
             shape = x.find('shape').text
             color = x.find('color').text
-            set_led(origin,area,shape,color)
-            draw_cube(grid,origin,area)
+            set_led(draw_cube(grid,origin,area))
 
 
-def set_led(origin,area,shape,color):
-    print("lights turned {} in a {} foot {} centered at {}!".format(color,area,shape,origin))
+
+def set_led(grid):
+    print(grid)
+    pixels[0] = (255,255,0)
+    pixels.show()
+    #print("lights turned {} in a {} foot {} centered at {}!".format(color,area,shape,origin))
 
 
 
 def draw_cube(grid,origin,area):
     tup = find_in_list_of_list(grid,origin)
     r , c = tup
+    aoe = []
     if area == 10:
         for i in range(4):
-            grid[r-2][c+1-i] = 'x'
-            grid[r+1][c+1-i] = 'x'
-            grid[r][c+1-i] = 'x'
-            grid[r-1][c+1-i] = 'x'
+            aoe.append(grid[r-2][c+1-i])
+            aoe.append(grid[r+1][c+1-i])
+            aoe.append(grid[r][c+1-i])
+            aoe.append(grid[r-1][c+1-i])
     elif area == 20:
         for i in range(8):
             grid[r-4][c+3-i] = 'x'
@@ -56,14 +64,8 @@ def draw_cube(grid,origin,area):
         grid[r-1][c-1] = 'x'
         grid[r-1][c] = 'x'
 
+    return aoe
 
-
-
-
-
-
-    for i in range(12):
-        print(grid[i])
 
 def make_grid(r):
     linea = []
@@ -72,12 +74,12 @@ def make_grid(r):
     lined = []
     linee = []
     linef = []
-    lineg = []
-    lineh = []
-    linei = []
-    linej = []
-    linek = []
-    linel = []
+    #lineg = []
+    #lineh = []
+    #linei = []
+    #linej = []
+    #linek = []
+    #linel = []
     for i in range(r):
 
         linea.append("a{}".format(i))
@@ -86,12 +88,12 @@ def make_grid(r):
         lined.append("d{}".format(i))
         linee.append("e{}".format(i))
         linef.append("f{}".format(i))
-        lineg.append("g{}".format(i))
-        lineh.append("h{}".format(i))
-        linei.append("i{}".format(i))
-        linej.append("j{}".format(i))
-        linek.append("k{}".format(i))
-        linel.append("l{}".format(i))
+        #lineg.append("g{}".format(i))
+        #lineh.append("h{}".format(i))
+        #linei.append("i{}".format(i))
+        #linej.append("j{}".format(i))
+        #linek.append("k{}".format(i))
+        #linel.append("l{}".format(i))
 
     grid = []
     grid.append(list(linea))
@@ -100,12 +102,12 @@ def make_grid(r):
     grid.append(list(lined))
     grid.append(list(linee))
     grid.append(list(linef))
-    grid.append(list(lineg))
-    grid.append(list(lineh))
-    grid.append(list(linei))
-    grid.append(list(linej))
-    grid.append(list(linek))
-    grid.append(list(linel))
+    #grid.append(list(lineg))
+    #grid.append(list(lineh))
+    #grid.append(list(linei))
+    #grid.append(list(linej))
+    #grid.append(list(linek))
+    #grid.append(list(linel))
 
     return grid
 
@@ -115,9 +117,12 @@ def find_in_list_of_list(mylist, char):
             return (mylist.index(sub_list), sub_list.index(char))
     raise ValueError("'{char}' is not in list".format(char = char))
 
-grid = make_grid(12)
+grid = make_grid(6)
 spell = input('what spell do you want to cast?')
 origin = input('where would you like to cast it?')
 cast(spell,origin,grid)
+for i in range(6):
+    print(grid[i])
+
 
 

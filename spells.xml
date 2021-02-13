@@ -11,6 +11,12 @@
         <shape>sphere</shape>
         <color>purple</color>
     </spell>
+    <spell>
+        <name>test2</name>
+        <area>10</area>
+        <shape>sphere</shape>
+        <color>purple</color>
+    </spell>
 
 </data>
 
