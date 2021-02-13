@@ -32,6 +32,8 @@ def cast(spell,origin,grid):
 def set_led(grid):
     print(grid)
     pixels[0] = (255,255,0)
+    pixels[1] = (255, 255, 0)
+    pixels[2] = (255, 255, 0)
     pixels.show()
     #print("lights turned {} in a {} foot {} centered at {}!".format(color,area,shape,origin))
 
