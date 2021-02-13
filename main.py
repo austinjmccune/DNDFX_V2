@@ -37,11 +37,13 @@ def assign_leds(grid):
     for i in range(rows):
         if i == 0:
             pass
+        elif (i%2) == 0:
+            control_num = control_num + 6
         else:
             control_num = control_num + 11
 
         for j in range(columns):
-            if control_num == 0:
+            if (control_num %2) == 0:
                 led_dict[grid[i][j]] = control_num + j
             else:
                 led_dict[grid[i][j]] = control_num - j
