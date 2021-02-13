@@ -38,10 +38,10 @@ def assign_leds(grid):
         if i == 0:
             pass
         else:
-            control_num = control_num + 6
+            control_num = control_num + 11
 
         for j in range(columns):
-            led_dict[grid[i][j]] = control_num + j
+            led_dict[grid[i][j]] = control_num - j
     return led_dict
 def set_led(grid,dict):
     #print(grid)
