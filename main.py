@@ -49,6 +49,7 @@ def set_led(grid,dict):
     for i in grid:
         print(dict[i])
         pixels[dict[i]] = (0,255,0)
+        pixels.show()
     #pixels[0] = (255,255,0)
     #pixels[1] = (255, 255, 0)
     #pixels[2] = (255, 255, 0)
