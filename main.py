@@ -80,10 +80,10 @@ def draw_cube(grid,origin,area):
             grid[r+3][c+3-i] = 'x'
 
     elif area == 5:
-        grid[r][c] = 'x'
-        grid[r][c-1] = 'x'
-        grid[r-1][c-1] = 'x'
-        grid[r-1][c] = 'x'
+        aoe.append(grid[r][c])
+        aoe.append(grid[r][c-1])
+        aoe.append(grid[r-1][c-1])
+        aoe.append(grid[r-1][c])
 
     return aoe
 
