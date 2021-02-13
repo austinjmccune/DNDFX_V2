@@ -75,14 +75,14 @@ def draw_cube(grid,origin,area):
             aoe.append(grid[r-1][c+1-i])
     elif area == 20:
         for i in range(8):
-            grid[r-4][c+3-i] = 'x'
-            grid[r-3][c+3-i] = 'x'
-            grid[r-2][c+3-i] = 'x'
-            grid[r-1][c+3-i] = 'x'
-            grid[r][c+3-i] = 'x'
-            grid[r+1][c+3-i] = 'x'
-            grid[r+2][c+3-i] = 'x'
-            grid[r+3][c+3-i] = 'x'
+            aoe.append(grid[r-4][c+3-i])
+            aoe.append(grid[r-3][c+3-i])
+            aoe.append(grid[r-2][c+3-i])
+            aoe.append(grid[r-1][c+3-i])
+            aoe.append(grid[r][c+3-i])
+            aoe.append(grid[r+1][c+3-i])
+            aoe.append(grid[r+2][c+3-i])
+            aoe.append(grid[r+3][c+3-i])
 
     elif area == 5:
         aoe.append(grid[r][c])
@@ -147,7 +147,6 @@ def find_in_list_of_list(mylist, char):
 
 grid = make_grid(4)
 led_dict = assign_leds(grid)
-print(led_dict)
 spell = input('what spell do you want to cast?')
 origin = input('where would you like to cast it?')
 cast(spell,origin,grid,led_dict)
