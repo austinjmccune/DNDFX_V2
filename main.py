@@ -38,12 +38,12 @@ def assign_leds(grid):
         if i == 0:
             pass
         elif (i%2) == 0:
-            control_num = control_num + 6
+            control_num = control_num + 1
         else:
             control_num = control_num + 11
 
         for j in range(columns):
-            if (control_num %2) == 0:
+            if (i %2) == 0:
                 led_dict[grid[i][j]] = control_num + j
             else:
                 led_dict[grid[i][j]] = control_num - j
@@ -147,9 +147,10 @@ def find_in_list_of_list(mylist, char):
 
 grid = make_grid(4)
 led_dict = assign_leds(grid)
-spell = input('what spell do you want to cast?')
-origin = input('where would you like to cast it?')
-cast(spell,origin,grid,led_dict)
+print(led_dict)
+#spell = input('what spell do you want to cast?')
+#origin = input('where would you like to cast it?')
+#cast(spell,origin,grid,led_dict)
 
 
 
