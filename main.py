@@ -76,10 +76,14 @@ def draw_cube(grid,origin,area):
     aoe = []
     if area == 10:
         for i in range(4):
-            aoe.append(grid[r-2][c+1-i])
-            aoe.append(grid[r+1][c+1-i])
-            aoe.append(grid[r][c+1-i])
-            aoe.append(grid[r-1][c+1-i])
+            try:
+                aoe.append(grid[r-2][c+1-i])
+                aoe.append(grid[r+1][c+1-i])
+                aoe.append(grid[r][c+1-i])
+                aoe.append(grid[r-1][c+1-i])
+            except Exception:
+                print('out of bounds!')
+                continue
     elif area == 20:
         for i in range(8):
             try:
