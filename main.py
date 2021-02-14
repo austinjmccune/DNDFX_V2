@@ -33,8 +33,7 @@ def cast(spell,origin,grid,dict):
             for y in colors_root.findall('color'):
                 if color == y.find('name').text:
                     rgb = eval(y.find('rgb').text)
-                else:
-                    rgb = (0,22,255)
+
 
             if shape == 'cube':
                 set_led(draw_cube(grid,origin,area),dict,rgb)
