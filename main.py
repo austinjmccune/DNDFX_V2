@@ -31,8 +31,8 @@ def cast(spell,origin,grid,dict):
             shape = x.find('shape').text
             color = x.find('color').text
             for y in colors_root.findall('color'):
-                if color == y.find('name'):
-                    rgb = y.find('rgb')
+                if color == y.find('name').text:
+                    rgb = y.find('rgb').text
                 else:
                     rgb = (0,22,200)
 
