@@ -99,7 +99,7 @@ def draw_sphere(grid,origin,area):
     aoe = []
     if area == 10:
         for i in range(4):
-            if (i == 0) or (i == 4):
+            if (i == 0) or (i == 3):
                 aoe.append(grid[r][c + 1 - i])
                 aoe.append(grid[r - 1][c + 1 - i])
             else:
