@@ -32,7 +32,7 @@ def cast(spell,origin,grid,dict):
             color = x.find('color').text
             for y in colors_root.findall('color'):
                 if color == y.find('name').text:
-                    rgb = y.find('rgb').text
+                    rgb = eval(y.find('rgb').text)
                 else:
                     rgb = (0,22,200)
 
@@ -65,7 +65,7 @@ def assign_leds(grid):
 def set_led(grid,dict,rgb):
     for i in grid:
         print(dict[i])
-        pixels[dict[i]] = eval('(255,255,0)')
+        pixels[dict[i]] = rgb
         pixels.show()
 
 
