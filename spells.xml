@@ -9,7 +9,7 @@
         <name>test</name>
         <area>5</area>
         <shape>sphere</shape>
-        <color>orange</color>
+        <color>green</color>
     </spell>
     <spell>
         <name>test2</name>
