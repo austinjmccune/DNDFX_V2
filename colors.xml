@@ -1,7 +1,7 @@
 <data>
     <color>
-       <name>orange</name>
-       <rgb>(0,255,0)</rgb>
+       <name>red</name>
+       <rgb>(255,,0)</rgb>
     </color>
     <color>
        <name>green</name>
