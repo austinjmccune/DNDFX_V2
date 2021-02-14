@@ -26,7 +26,10 @@ def cast(spell,origin,grid,dict):
             area = int(x.find('area').text)
             shape = x.find('shape').text
             color = x.find('color').text
-            set_led(draw_sphere(grid,origin,area),dict)
+            if shape == 'cube':
+                set_led(draw_cube(grid,origin,area),dict)
+            elif shape == 'sphere':
+                set_led(draw_sphere(grid,origin,area),dict)
 
 
 def assign_leds(grid):
