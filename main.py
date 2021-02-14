@@ -34,7 +34,6 @@ def cast(spell,origin,grid,dict):
                 if color == y.find('name').text:
                     rgb = eval(y.find('rgb').text)
 
-
             if shape == 'cube':
                 set_led(draw_cube(grid,origin,area),dict,rgb)
             elif shape == 'sphere':
@@ -111,10 +110,26 @@ def draw_cube(grid,origin,area):
                 pass
 
     elif area == 5:
-        aoe.append(grid[r][c])
-        aoe.append(grid[r][c-1])
-        aoe.append(grid[r-1][c-1])
-        aoe.append(grid[r-1][c])
+        try:
+            aoe.append(grid[r][c])
+        except Exception:
+            print('out of bounds!')
+            pass
+        try:
+            aoe.append(grid[r][c-1])
+        except Exception:
+            print('out of bounds!')
+            pass
+        try:
+            aoe.append(grid[r-1][c-1])
+        except Exception:
+            print('out of bounds!')
+            pass
+        try:
+            aoe.append(grid[r-1][c])
+        except Exception:
+            print('out of bounds!')
+            pass
 
     return aoe
 
@@ -126,13 +141,37 @@ def draw_sphere(grid,origin,area):
     if area == 10:
         for i in range(4):
             if (i == 0) or (i == 3):
-                aoe.append(grid[r][c + 1 - i])
-                aoe.append(grid[r - 1][c + 1 - i])
+                try:
+                    aoe.append(grid[r][c + 1 - i])
+                except Exception:
+                    print('out of bounds!')
+                    pass
+                try:
+                    aoe.append(grid[r - 1][c + 1 - i])
+                except Exception:
+                    print('out of bounds!')
+                    pass
             else:
-                aoe.append(grid[r-2][c+1-i])
-                aoe.append(grid[r+1][c+1-i])
-                aoe.append(grid[r][c+1-i])
-                aoe.append(grid[r-1][c+1-i])
+                try:
+                    aoe.append(grid[r-2][c+1-i])
+                except Exception:
+                    print('out of bounds!')
+                    pass
+                try:
+                    aoe.append(grid[r+1][c+1-i])
+                except Exception:
+                    print('out of bounds!')
+                    pass
+                try:
+                    aoe.append(grid[r][c+1-i])
+                except Exception:
+                    print('out of bounds!')
+                    pass
+                try:
+                    aoe.append(grid[r-1][c+1-i])
+                except Exception:
+                    print('out of bounds!')
+                    pass
     elif area == 20:
         #WORK ON THIS WHEN YOU GET A BIGGER BOARD. YOU WILL NEED TO MAKE IF 0 OR 7, ELIF 3 OR 4, ELSE LOGIC TO PRINT THE ROWS CORRECTLY.
         for i in range(8):
@@ -146,10 +185,26 @@ def draw_sphere(grid,origin,area):
             aoe.append(grid[r+3][c+3-i])
 
     elif area == 5:
-        aoe.append(grid[r][c])
-        aoe.append(grid[r][c-1])
-        aoe.append(grid[r-1][c-1])
-        aoe.append(grid[r-1][c])
+        try:
+            aoe.append(grid[r][c])
+        except Exception:
+            print('out of bounds!')
+            pass
+        try:
+            aoe.append(grid[r][c-1])
+        except Exception:
+            print('out of bounds!')
+            pass
+        try:
+            aoe.append(grid[r-1][c-1])
+        except Exception:
+            print('out of bounds!')
+            pass
+        try:
+            aoe.append(grid[r-1][c])
+        except Exception:
+            print('out of bounds!')
+            pass
 
     return aoe
 
