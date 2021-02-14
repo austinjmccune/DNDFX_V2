@@ -48,18 +48,12 @@ def assign_leds(grid):
             else:
                 led_dict[grid[i][j]] = control_num - j
     return led_dict
+
 def set_led(grid,dict):
-    #print(grid)
-    #print(dict)
     for i in grid:
         print(dict[i])
         pixels[dict[i]] = (0,255,0)
         pixels.show()
-    #pixels[0] = (255,255,0)
-    #pixels[1] = (255, 255, 0)
-    #pixels[2] = (255, 255, 0)
-    #pixels.show()
-    #print("lights turned {} in a {} foot {} centered at {}!".format(color,area,shape,origin))
 
 
 #functions to create a list for various shapes.
@@ -108,6 +102,7 @@ def draw_sphere(grid,origin,area):
                 aoe.append(grid[r][c+1-i])
                 aoe.append(grid[r-1][c+1-i])
     elif area == 20:
+        #WORK ON THIS WHEN YOU GET A BIGGER BOARD. YOU WILL NEED TO MAKE IF 0 OR 7, ELIF 3 OR 4, ELSE LOGIC TO PRINT THE ROWS CORRECTLY.
         for i in range(8):
             aoe.append(grid[r-4][c+3-i])
             aoe.append(grid[r-3][c+3-i])
