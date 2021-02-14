@@ -15,13 +15,13 @@
         <name>test2</name>
         <area>10</area>
         <shape>cube</shape>
-        <color>purple</color>
+        <color>green</color>
     </spell>
     <spell>
         <name>test3</name>
         <area>10</area>
         <shape>sphere</shape>
-        <color>purple</color>
+        <color>orange</color>
     </spell>
 
 

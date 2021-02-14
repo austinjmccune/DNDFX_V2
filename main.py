@@ -1,6 +1,10 @@
 import xml.etree.ElementTree as ET
-my_tree = ET.parse('spells.xml')
-my_root = my_tree.getroot()
+#spells xml file parsing
+spells_tree = ET.parse('spells.xml')
+spells_root = spells_tree.getroot()
+#colors xml file parsing
+colors_tree = ET.parse('colors.xml')
+colors_root = colors_tree.getroot()
 
 import time
 import board
@@ -20,16 +24,20 @@ pixels = neopixel.NeoPixel(
 )
 
 def cast(spell,origin,grid,dict):
-    for x in my_root.findall('spell'):
+    for x in spells_root.findall('spell'):
         if spell == x.find('name').text:
             name = x.find('name').text
             area = int(x.find('area').text)
             shape = x.find('shape').text
             color = x.find('color').text
+            for y in colors_root.findall('color'):
+                if color == y.find('name'):
+                    rgb = y.find('rgb')
+
             if shape == 'cube':
-                set_led(draw_cube(grid,origin,area),dict)
+                set_led(draw_cube(grid,origin,area),dict,rgb)
             elif shape == 'sphere':
-                set_led(draw_sphere(grid,origin,area),dict)
+                set_led(draw_sphere(grid,origin,area),dict,rgb)
 
 
 def assign_leds(grid):
@@ -52,10 +60,10 @@ def assign_leds(grid):
                 led_dict[grid[i][j]] = control_num - j
     return led_dict
 
-def set_led(grid,dict):
+def set_led(grid,dict,rgb):
     for i in grid:
         print(dict[i])
-        pixels[dict[i]] = (0,255,0)
+        pixels[dict[i]] = rgb
         pixels.show()
 
 
