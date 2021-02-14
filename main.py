@@ -65,7 +65,7 @@ def assign_leds(grid):
 def set_led(grid,dict,rgb):
     for i in grid:
         print(dict[i])
-        pixels[dict[i]] = rgb
+        pixels[dict[i]] = '(255,255,0)'
         pixels.show()
 
 
