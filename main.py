@@ -83,7 +83,7 @@ def draw_cube(grid,origin,area):
                 aoe.append(grid[r-1][c+1-i])
             except Exception:
                 print('out of bounds!')
-                continue
+                pass
     elif area == 20:
         for i in range(8):
             try:
@@ -97,7 +97,7 @@ def draw_cube(grid,origin,area):
                 aoe.append(grid[r+3][c+3-i])
             except Exception:
                 print('out of bounds!')
-                continue
+                pass
 
     elif area == 5:
         aoe.append(grid[r][c])
