@@ -20,7 +20,7 @@
     <spell>
         <name>test3</name>
         <area>10</area>
-        <shape>sphere</shape>
+        <shape>cube</shape>
         <color>red</color>
     </spell>
 
