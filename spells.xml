@@ -15,7 +15,7 @@
         <name>test2</name>
         <area>10</area>
         <shape>cube</shape>
-        <color>red</color>
+        <color>green</color>
     </spell>
     <spell>
         <name>test3</name>
