@@ -7,5 +7,9 @@
        <name>orange</name>
        <rgb>(255,69,0)</rgb>
     </color>
+    <color>
+       <name>red</name>
+       <rgb>(255,0,0)</rgb>
+    </color>
 
 </data>
