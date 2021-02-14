@@ -26,7 +26,7 @@ def cast(spell,origin,grid,dict):
             area = int(x.find('area').text)
             shape = x.find('shape').text
             color = x.find('color').text
-            set_led(draw_cube(grid,origin,area),dict)
+            set_led(draw_sphere(grid,origin,area),dict)
 
 
 def assign_leds(grid):
@@ -62,7 +62,7 @@ def set_led(grid,dict):
     #print("lights turned {} in a {} foot {} centered at {}!".format(color,area,shape,origin))
 
 
-
+#functions to create a list for various shapes.
 def draw_cube(grid,origin,area):
     tup = find_in_list_of_list(grid,origin)
     r , c = tup
@@ -92,6 +92,35 @@ def draw_cube(grid,origin,area):
 
     return aoe
 
+
+def draw_sphere(grid,origin,area):
+    tup = find_in_list_of_list(grid,origin)
+    r , c = tup
+    aoe = []
+    if area == 10:
+        for i in range(4):
+            aoe.append(grid[r-2][c-i])
+            aoe.append(grid[r+1][c+1-i])
+            aoe.append(grid[r][c+1-i])
+            aoe.append(grid[r-1][c-i])
+    elif area == 20:
+        for i in range(8):
+            aoe.append(grid[r-4][c+3-i])
+            aoe.append(grid[r-3][c+3-i])
+            aoe.append(grid[r-2][c+3-i])
+            aoe.append(grid[r-1][c+3-i])
+            aoe.append(grid[r][c+3-i])
+            aoe.append(grid[r+1][c+3-i])
+            aoe.append(grid[r+2][c+3-i])
+            aoe.append(grid[r+3][c+3-i])
+
+    elif area == 5:
+        aoe.append(grid[r][c])
+        aoe.append(grid[r][c-1])
+        aoe.append(grid[r-1][c-1])
+        aoe.append(grid[r-1][c])
+
+    return aoe
 
 def make_grid(r):
     linea = []
