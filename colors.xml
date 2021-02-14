@@ -1,9 +1,5 @@
 <data>
     <color>
-       <name>green</name>
-       <rgb>(0,255,0)</rgb>
-    </color>
-    <color>
        <name>orange</name>
        <rgb>(255,69,0)</rgb>
     </color>
