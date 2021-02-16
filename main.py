@@ -38,6 +38,8 @@ def cast(spell,origin,grid,dict):
                 set_led(draw_cube(grid,origin,area),dict,rgb)
             elif shape == 'sphere':
                 set_led(draw_sphere(grid,origin,area),dict,rgb)
+            elif shape == 'cone':
+                set_led(draw_cone(grid,origin,area),dict,rgb)
 
 
 def assign_leds(grid):
@@ -205,6 +207,34 @@ def draw_sphere(grid,origin,area):
         except Exception:
             print('out of bounds!')
             pass
+
+    return aoe
+
+
+def draw_cone(grid,origin,area):
+    tup = find_in_list_of_list(grid,origin)
+    r , c = tup
+    aoe = []
+    if area == 15:
+        for i in range(1,4):
+            try:
+                aoe.append(grid[r - i ][c + i - 1])
+            except Exception:
+                print('out of bounds!')
+                pass
+            try:
+                if i < 3:
+                    aoe.append(grid[r - 2][c + i - 1])
+            except Exception:
+                print('out of bounds!')
+                pass
+
+            try:
+                if i == 1:
+                    aoe.append(grid[r-3][c])
+            except Exception:
+                print('out of bounds!')
+                pass
 
     return aoe
 

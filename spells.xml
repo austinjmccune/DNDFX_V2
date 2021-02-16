@@ -23,6 +23,12 @@
         <shape>sphere</shape>
         <color>green</color>
     </spell>
+    <spell>
+        <name>test4</name>
+        <area>15</area>
+        <shape>cone</shape>
+        <color>orange</color>
+    </spell>
 
 
 </data>
