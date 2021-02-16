@@ -218,7 +218,7 @@ def draw_cone(grid,origin,area):
     if area == 15:
         for i in range(1,4):
             try:
-                aoe.append(grid[r - i ][c + i - 1])
+                aoe.append(grid[r - i ][c])
             except Exception:
                 print('out of bounds!')
                 pass
@@ -230,8 +230,7 @@ def draw_cone(grid,origin,area):
                 pass
 
             try:
-                if i == 1:
-                    aoe.append(grid[r-3][c])
+                aoe.append(grid[r-1][c + i])
             except Exception:
                 print('out of bounds!')
                 pass
