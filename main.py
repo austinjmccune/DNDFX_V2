@@ -74,6 +74,7 @@ def set_led(grid,dict,rgb):
 def draw_cube(grid,origin,area):
     tup = find_in_list_of_list(grid,origin)
     r , c = tup
+    print(tup)
     aoe = []
     if area == 10:
         for i in range(4):
