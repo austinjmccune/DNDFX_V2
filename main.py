@@ -60,6 +60,7 @@ def assign_leds(grid):
                 led_dict[grid[i][j]] = control_num + j
             else:
                 led_dict[grid[i][j]] = control_num - j
+    print(led_dict)
     return led_dict
 
 def set_led(grid,dict,rgb):
