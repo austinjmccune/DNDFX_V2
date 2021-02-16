@@ -230,7 +230,7 @@ def draw_cone(grid,origin,area):
                 pass
 
             try:
-                aoe.append(grid[r-1][c + i])
+                aoe.append(grid[r-1][c + i -1])
             except Exception:
                 print('out of bounds!')
                 pass
