@@ -300,7 +300,7 @@ def draw_cone(grid,origin,area,direction):
                         print('out of bounds!')
                         pass
 
-    # South East Cone
+        # South East Cone
         if direction == 'se' or direction == 'SE':
             for i in range(1,3):
                 if i == 1:
@@ -390,9 +390,10 @@ def find_in_list_of_list(mylist, char):
 
 grid = make_grid(4)
 led_dict = assign_leds(grid)
-spell = input('what spell do you want to cast?')
-origin = input('where would you like to cast it?')
-cast(spell,origin,grid,led_dict)
+while True:
+    spell = input('what spell do you want to cast?')
+    origin = input('where would you like to cast it?')
+    cast(spell,origin,grid,led_dict)
 
 
 
