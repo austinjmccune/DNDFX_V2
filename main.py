@@ -123,21 +123,24 @@ def draw_cube(grid,origin,area):
         except Exception:
             print('out of bounds!')
             pass
-        try:
-            aoe.append(grid[r][c-1])
-        except Exception:
-            print('out of bounds!')
-            pass
-        try:
-            aoe.append(grid[r-1][c-1])
-        except Exception:
-            print('out of bounds!')
-            pass
-        try:
-            aoe.append(grid[r-1][c])
-        except Exception:
-            print('out of bounds!')
-            pass
+        if c-1 >= 0:
+            try:
+                aoe.append(grid[r][c-1])
+            except Exception:
+                print('out of bounds!')
+                pass
+        if r-1 >= 0 and c-1 >= 0:
+            try:
+                aoe.append(grid[r-1][c-1])
+            except Exception:
+                print('out of bounds!')
+                pass
+        if r-1 >= 0:
+            try:
+                aoe.append(grid[r-1][c])
+            except Exception:
+                print('out of bounds!')
+                pass
 
     return aoe
 
@@ -149,37 +152,43 @@ def draw_sphere(grid,origin,area):
     if area == 10:
         for i in range(4):
             if (i == 0) or (i == 3):
-                try:
-                    aoe.append(grid[r][c + 1 - i])
-                except Exception:
-                    print('out of bounds!')
-                    pass
-                try:
-                    aoe.append(grid[r - 1][c + 1 - i])
-                except Exception:
-                    print('out of bounds!')
-                    pass
+                if (c + 1 - i) >= 0:
+                    try:
+                        aoe.append(grid[r][c + 1 - i])
+                    except Exception:
+                        print('out of bounds!')
+                        pass
+                if r - 1 and (c + 1 - i) >= 0:
+                    try:
+                        aoe.append(grid[r - 1][c + 1 - i])
+                    except Exception:
+                        print('out of bounds!')
+                        pass
             else:
-                try:
-                    aoe.append(grid[r-2][c+1-i])
-                except Exception:
-                    print('out of bounds!')
-                    pass
-                try:
-                    aoe.append(grid[r+1][c+1-i])
-                except Exception:
-                    print('out of bounds!')
-                    pass
-                try:
-                    aoe.append(grid[r][c+1-i])
-                except Exception:
-                    print('out of bounds!')
-                    pass
-                try:
-                    aoe.append(grid[r-1][c+1-i])
-                except Exception:
-                    print('out of bounds!')
-                    pass
+                if r - 2 >= 0 and (c + 1 - i) >= 0:
+                    try:
+                        aoe.append(grid[r-2][c+1-i])
+                    except Exception:
+                        print('out of bounds!')
+                        pass
+                if r + 1 >= 0 and (c + 1 - i) >= 0:
+                    try:
+                        aoe.append(grid[r+1][c+1-i])
+                    except Exception:
+                        print('out of bounds!')
+                        pass
+                if (c + 1 - i) >= 0:
+                    try:
+                        aoe.append(grid[r][c+1-i])
+                    except Exception:
+                        print('out of bounds!')
+                        pass
+                if r - 1 >= 0 and (c + 1 - i) >= 0:
+                    try:
+                        aoe.append(grid[r-1][c+1-i])
+                    except Exception:
+                        print('out of bounds!')
+                        pass
     elif area == 20:
         #WORK ON THIS WHEN YOU GET A BIGGER BOARD. YOU WILL NEED TO MAKE IF 0 OR 7, ELIF 3 OR 4, ELSE LOGIC TO PRINT THE ROWS CORRECTLY.
         for i in range(8):
@@ -192,27 +201,31 @@ def draw_sphere(grid,origin,area):
             aoe.append(grid[r+2][c+3-i])
             aoe.append(grid[r+3][c+3-i])
 
+
     elif area == 5:
         try:
             aoe.append(grid[r][c])
         except Exception:
             print('out of bounds!')
             pass
-        try:
-            aoe.append(grid[r][c-1])
-        except Exception:
-            print('out of bounds!')
-            pass
-        try:
-            aoe.append(grid[r-1][c-1])
-        except Exception:
-            print('out of bounds!')
-            pass
-        try:
-            aoe.append(grid[r-1][c])
-        except Exception:
-            print('out of bounds!')
-            pass
+        if c-1 >= 0:
+            try:
+                aoe.append(grid[r][c-1])
+            except Exception:
+                print('out of bounds!')
+                pass
+        if r-1 >= 0 and c-1 >= 0:
+            try:
+                aoe.append(grid[r-1][c-1])
+            except Exception:
+                print('out of bounds!')
+                pass
+        if r-1 >= 0:
+            try:
+                aoe.append(grid[r-1][c])
+            except Exception:
+                print('out of bounds!')
+                pass
 
     return aoe
 
@@ -223,23 +236,24 @@ def draw_cone(grid,origin,area):
     aoe = []
     if area == 15:
         for i in range(1,4):
-            try:
-                aoe.append(grid[r - i ][c])
-            except Exception:
-                print('out of bounds!')
-                pass
-            try:
-                if i < 3:
+            if r - 1 >= 0:
+                try:
+                    aoe.append(grid[r - i ][c])
+                except Exception:
+                    print('out of bounds!')
+                    pass
+            if r - 2 >= 0 and (c + i - 1) >= 0 and i < 3:
+                try:
                     aoe.append(grid[r - 2][c + i - 1])
-            except Exception:
-                print('out of bounds!')
-                pass
-
-            try:
-                aoe.append(grid[r-1][c + i -1])
-            except Exception:
-                print('out of bounds!')
-                pass
+                except Exception:
+                    print('out of bounds!')
+                    pass
+            if r - 1 >= 0 and (c + i - 1) >= 0:
+                try:
+                    aoe.append(grid[r-1][c + i -1])
+                except Exception:
+                    print('out of bounds!')
+                    pass
 
     return aoe
 
