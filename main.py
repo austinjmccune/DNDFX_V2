@@ -278,7 +278,7 @@ def draw_cone(grid,origin,area):
                     pass
     #South West Cone
     if area == 13:
-        for i in range(1,4):
+        for i in range(1,3):
             if c - i >= 0:
                 try:
                     aoe.append(grid[r][c - i])
