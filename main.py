@@ -236,7 +236,7 @@ def draw_cone(grid,origin,area):
     aoe = []
     if area == 15:
         for i in range(1,4):
-            if r - 1 >= 0:
+            if r - i >= 0:
                 try:
                     aoe.append(grid[r - i ][c])
                 except Exception:
