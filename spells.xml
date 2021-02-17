@@ -43,7 +43,7 @@
     </spell>
     <spell>
         <name>test7</name>
-        <area>12<area>
+        <area>12</area>
         <shape>cone</shape>
         <color>orange</color>
     </spell>
