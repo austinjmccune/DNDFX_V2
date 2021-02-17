@@ -298,6 +298,40 @@ def draw_cone(grid,origin,area):
                     print('out of bounds!')
                     pass
 
+    # South East Cone
+    if area == 12:
+        for i in range(1,4):
+            if i == 1:
+                try:
+                    aoe.append(grid[r][c])
+                except Exception:
+                    print('out of bounds!')
+                    pass
+                if r - i >= 0 and c - i >= 0:
+                    try:
+                        aoe.append(grid[r - i][c - i])
+                    except Exception:
+                        print('out of bounds!')
+                        pass
+            if r - 2 >= 0 and (c + i - 1) >= 0 and i < 3:
+                try:
+                    aoe.append(grid[r][c + i])
+                except Exception:
+                    print('out of bounds!')
+                    pass
+            if r - 1 >= 0 and (c + i - 1) >= 0:
+                try:
+                    aoe.append(grid[r + i][c])
+                except Exception:
+                    print('out of bounds!')
+                    pass
+            if r - 1 >= 0 and (c + i - 1) >= 0:
+                try:
+                    aoe.append(grid[r + i][c])
+                except Exception:
+                    print('out of bounds!')
+                    pass
+
     return aoe
 
 def make_grid(r):
