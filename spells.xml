@@ -31,21 +31,21 @@
     </spell>
     <spell>
         <name>test5</name>
-        <area>14</area>
+        <area>15</area>
         <shape>cone</shape>
-        <color>orange</color>
+        <color>green</color>
     </spell>
     <spell>
         <name>test6</name>
-        <area>13</area>
+        <area>15</area>
         <shape>cone</shape>
-        <color>orange</color>
+        <color>blue</color>
     </spell>
     <spell>
         <name>test7</name>
-        <area>12</area>
+        <area>15</area>
         <shape>cone</shape>
-        <color>orange</color>
+        <color>red</color>
     </spell>
 
 
