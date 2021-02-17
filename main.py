@@ -234,6 +234,7 @@ def draw_cone(grid,origin,area):
     tup = find_in_list_of_list(grid,origin)
     r , c = tup
     aoe = []
+    #North East Cone
     if area == 15:
         for i in range(1,4):
             if r - i >= 0:
@@ -251,6 +252,27 @@ def draw_cone(grid,origin,area):
             if r - 1 >= 0 and (c + i - 1) >= 0:
                 try:
                     aoe.append(grid[r-1][c + i -1])
+                except Exception:
+                    print('out of bounds!')
+                    pass
+    #North West Cone
+    if area == 14:
+        for i in range(1,4):
+            if r - 1 >= 0 and c - i >=0:
+                try:
+                    aoe.append(grid[r - 1 ][c - i])
+                except Exception:
+                    print('out of bounds!')
+                    pass
+            if r - 2 >= 0 and (c - i) >= 0 and i < 3:
+                try:
+                    aoe.append(grid[r - 2][c - i])
+                except Exception:
+                    print('out of bounds!')
+                    pass
+            if r - 3 >= 0 and (c - 1) >= 0 and i == 1:
+                try:
+                    aoe.append(grid[r-3][c - 1])
                 except Exception:
                     print('out of bounds!')
                     pass
