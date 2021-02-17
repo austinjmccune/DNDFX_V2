@@ -35,6 +35,12 @@
         <shape>cone</shape>
         <color>orange</color>
     </spell>
+    <spell>
+        <name>test6</name>
+        <area>13</area>
+        <shape>cone</shape>
+        <color>orange</color>
+    </spell>
 
 
 </data>
