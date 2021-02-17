@@ -313,19 +313,19 @@ def draw_cone(grid,origin,area):
                     except Exception:
                         print('out of bounds!')
                         pass
-            if r - 2 >= 0 and (c + i - 1) >= 0 and i < 3:
+            if (c + i) >= 0 and i < 3:
                 try:
                     aoe.append(grid[r][c + i])
                 except Exception:
                     print('out of bounds!')
                     pass
-            if r - 1 >= 0 and (c + i - 1) >= 0:
+            if r + 1 >= 0:
                 try:
                     aoe.append(grid[r + i][c])
                 except Exception:
                     print('out of bounds!')
                     pass
-            if r - 1 >= 0 and (c + i - 1) >= 0:
+            if r + i >= 0:
                 try:
                     aoe.append(grid[r + i][c])
                 except Exception:
