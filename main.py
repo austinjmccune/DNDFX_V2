@@ -300,8 +300,8 @@ def draw_cone(grid,origin,area,direction):
                         print('out of bounds!')
                         pass
 
-        # South East Cone
-      if direction == 'se' or direction == 'SE':
+    # South East Cone
+        if direction == 'se' or direction == 'SE':
             for i in range(1,3):
                 if i == 1:
                     try:
