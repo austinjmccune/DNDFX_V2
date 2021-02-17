@@ -1,9 +1,9 @@
 <data>
     <spell>
        <name>fireball</name>
-        <area>20</area>
+        <area>10</area>
         <shape>sphere</shape>
-        <color>red</color>
+        <color>orange</color>
     </spell>
     <spell>
         <name>test</name>
@@ -15,13 +15,13 @@
         <name>test2</name>
         <area>10</area>
         <shape>cube</shape>
-        <color>orange</color>
+        <color>green</color>
     </spell>
     <spell>
         <name>test3</name>
         <area>10</area>
         <shape>sphere</shape>
-        <color>green</color>
+        <color>orange</color>
     </spell>
     <spell>
         <name>test4</name>
