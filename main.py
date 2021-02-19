@@ -77,7 +77,7 @@ def glow_effect(grid,dict,rgb):
     x = 0
     t_end = time.time() + 60
     while time.time() < t_end:
-        while x < 20:
+        while x < 10:
             for i in range(3):
                 if li[i] - 1 > 0:
                     li[i] = round(li[i] - 1)
