@@ -87,7 +87,7 @@ def glow_effect(grid,dict,rgb):
                 pixels[dict[i]] = rgb
                 #time.sleep(0.05)
                 pixels.show()
-            time.sleep(0.8)
+            time.sleep(0.05)
             x = x+1
         while x >= 0:
             for i in range(3):
