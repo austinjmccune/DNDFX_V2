@@ -343,7 +343,7 @@ def draw_line(grid,origin,area,direction):
     r , c = tup
     aoe = []
     if area == 30:
-        for i in range(6):
+        for i in range(1,6):
             if direction == 'n' or direction == 'N':
                 if r - i >= 0:
                     try:
