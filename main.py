@@ -35,7 +35,7 @@ def cast(spell,origin,grid,dict):
                     rgb = eval(y.find('rgb').text)
 
             if shape == 'cube':
-                set_led(draw_cube(grid,origin,area),dict,rgb)
+                glow_effect(draw_cube(grid,origin,area),dict,rgb)
             elif shape == 'sphere':
                 set_led(draw_sphere(grid,origin,area),dict,rgb)
             elif shape == 'cone':
@@ -64,7 +64,6 @@ def assign_leds(grid):
                 led_dict[grid[i][j]] = control_num + j
             else:
                 led_dict[grid[i][j]] = control_num - j
-    print(led_dict)
     return led_dict
 
 def set_led(grid,dict,rgb):
@@ -73,13 +72,27 @@ def set_led(grid,dict,rgb):
         pixels[dict[i]] = rgb
         pixels.show()
 
+def glow_effect(grid,dict,rgb):
+    li = list(rgb)
+    x = 0
+    while x < 50:
+        for i in range(3):
+            if li[i] - 1 >= 0:
+                li[i] = li[i] - 1
+        rgb = tuple(li)
+        for i in grid:
+            pixels[dict[i]] = rgb
+            pixels.show()
+        x = x+1
+
+
+
 
 #functions to create a list for various shapes.
 
 def draw_cube(grid,origin,area):
     tup = find_in_list_of_list(grid,origin)
     r , c = tup
-    print(tup)
     aoe = []
     if area == 10:
         for i in range(4):
