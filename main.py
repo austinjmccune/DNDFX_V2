@@ -43,7 +43,7 @@ def cast(spell,origin,grid,dict):
                 set_led(draw_cone(grid,origin,area,direction),dict,rgb)
             elif shape == 'line':
                 direction = input("what direction?")
-                set_led(draw_cone(grid,origin,area,direction),dict,rgb)
+                set_led(draw_line(grid,origin,area,direction),dict,rgb)
 
 
 def assign_leds(grid):
@@ -204,7 +204,6 @@ def draw_sphere(grid,origin,area):
             aoe.append(grid[r+1][c+3-i])
             aoe.append(grid[r+2][c+3-i])
             aoe.append(grid[r+3][c+3-i])
-
 
     elif area == 5:
         try:
