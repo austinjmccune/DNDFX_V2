@@ -47,7 +47,12 @@
         <shape>cone</shape>
         <color>red</color>
     </spell>
-
+    <spell>
+        <name>line</name>
+        <area>30</area>
+        <shape>line</shape>
+        <color>orange</color>
+    </spell>
 
 </data>
 

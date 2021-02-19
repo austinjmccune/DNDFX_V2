@@ -41,6 +41,9 @@ def cast(spell,origin,grid,dict):
             elif shape == 'cone':
                 direction = input("what direction?")
                 set_led(draw_cone(grid,origin,area,direction),dict,rgb)
+            elif shape == 'line':
+                direction = input("what direction?")
+                set_led(draw_cone(grid,origin,area,direction),dict,rgb)
 
 
 def assign_leds(grid):
@@ -333,6 +336,46 @@ def draw_cone(grid,origin,area,direction):
                     except Exception:
                         print('out of bounds!')
                         pass
+
+    return aoe
+
+def draw_line(grid,origin,area,direction):
+    tup = find_in_list_of_list(grid,origin)
+    r , c = tup
+    aoe = []
+    if area == 30:
+        for i in range(6):
+            if direction == 'n' or direction == 'N':
+                if r - i >= 0:
+                    try:
+                        aoe.append(grid[r - i][c])
+                    except Exception:
+                        print('out of bounds!')
+                        pass
+            if direction == 's' or direction == 'S':
+                if r + i >= 0:
+                    try:
+                        aoe.append(grid[r + i][c])
+                    except Exception:
+                        print('out of bounds!')
+                        pass
+
+            if direction == 'e' or direction == 'E':
+                if c + i >= 0:
+                    try:
+                        aoe.append(grid[r][c + i])
+                    except Exception:
+                        print('out of bounds!')
+                        pass
+
+            if direction == 'w' or direction == 'W':
+                if c - i >= 0:
+                    try:
+                        aoe.append(grid[r][c - i])
+                    except Exception:
+                        print('out of bounds!')
+                        pass
+
 
     return aoe
 
