@@ -75,10 +75,10 @@ def set_led(grid,dict,rgb):
 def glow_effect(grid,dict,rgb):
     li = list(rgb)
     x = 0
-    while x < 100:
+    while x < 10:
         for i in range(3):
-            if li[i] - 1 >= 0:
-                li[i] = li[i] - 1
+            if li[i] / 2 >= 0:
+                li[i] = round(li[i] / 2)
         rgb = tuple(li)
         for i in grid:
             pixels[dict[i]] = rgb
@@ -87,8 +87,8 @@ def glow_effect(grid,dict,rgb):
         x = x+1
     while x >= 0:
         for i in range(3):
-            if li[i] + 1 <= 255:
-                li[i] = li[i] + 1
+            if li[i] * 2 <= 255:
+                li[i] = li[i] * 2
         rgb = tuple(li)
         for i in grid:
             pixels[dict[i]] = rgb
