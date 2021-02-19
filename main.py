@@ -75,7 +75,7 @@ def set_led(grid,dict,rgb):
 def glow_effect(grid,dict,rgb):
     li = list(rgb)
     x = 0
-    while x < 10:
+    while x < 3:
         for i in range(3):
             if li[i] / 2 > 0:
                 li[i] = round(li[i] / 2)
