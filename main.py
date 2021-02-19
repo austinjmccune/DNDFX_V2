@@ -79,8 +79,8 @@ def glow_effect(grid,dict,rgb):
     while time.time() < t_end:
         while x < 10:
             for i in range(3):
-                if li[i] - 1 > 0:
-                    li[i] = round(li[i] - 1)
+                if li[i] - 10 > 0:
+                    li[i] = round(li[i] - 10)
                     print(li[i])
             rgb = tuple(li)
             for i in grid:
@@ -91,7 +91,7 @@ def glow_effect(grid,dict,rgb):
         while x >= 0:
             for i in range(3):
                 if li[i] * 2 <= 255 and li[i] > 0:
-                    li[i] = li[i] + 1
+                    li[i] = li[i] + 10
                     print(li[i])
             rgb = tuple(li)
             for i in grid:
