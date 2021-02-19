@@ -90,7 +90,7 @@ def glow_effect(grid,dict,rgb):
             x = x+1
         while x >= 0:
             for i in range(3):
-                if li[i] * 2 <= 255 and li[i] > 0:
+                if li[i] + 10 <= 255 and li[i] > 0:
                     li[i] = li[i] + 10
                     print(li[i])
             rgb = tuple(li)
