@@ -77,7 +77,7 @@ def glow_effect(grid,dict,rgb):
     x = 0
     t_end = time.time() + 60
     while time.time() < t_end:
-        while x < 3:
+        while x < 2:
             for i in range(3):
                 if li[i] / 2 > 0 and li[i] / 2 > 8:
                     li[i] = round(li[i] / 2)
