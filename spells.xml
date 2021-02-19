@@ -6,6 +6,12 @@
         <color>orange</color>
     </spell>
     <spell>
+       <name>blast</name>
+        <area>0</area>
+        <shape>cube</shape>
+        <color>purple</color>
+    </spell>
+    <spell>
         <name>test</name>
         <area>5</area>
         <shape>sphere</shape>

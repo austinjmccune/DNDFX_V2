@@ -75,6 +75,7 @@ def set_led(grid,dict,rgb):
 
 
 #functions to create a list for various shapes.
+
 def draw_cube(grid,origin,area):
     tup = find_in_list_of_list(grid,origin)
     r , c = tup
@@ -146,7 +147,11 @@ def draw_cube(grid,origin,area):
                 print('out of bounds!')
                 pass
 
+    elif area == 0:
+        aoe.append(grid[r][c])
+
     return aoe
+
 
 
 def draw_sphere(grid,origin,area):
@@ -410,6 +415,8 @@ def draw_line(grid,origin,area,direction):
 
 
     return aoe
+
+
 
 def make_grid(r):
     linea = []

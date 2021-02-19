@@ -16,5 +16,9 @@
        <name>blue</name>
        <rgb>(0,0,255)</rgb>
     </color>
+    <color>
+       <name>purple</name>
+       <rgb>(128,0,128)</rgb>
+    </color>
 
 </data>
