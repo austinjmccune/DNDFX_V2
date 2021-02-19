@@ -79,6 +79,7 @@ def glow_effect(grid,dict,rgb):
         for i in range(3):
             if li[i] / 2 >= 0:
                 li[i] = round(li[i] / 2)
+                print(li[i])
         rgb = tuple(li)
         for i in grid:
             pixels[dict[i]] = rgb
