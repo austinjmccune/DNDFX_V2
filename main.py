@@ -75,7 +75,7 @@ def set_led(grid,dict,rgb):
 def glow_effect(grid,dict,rgb):
     li = list(rgb)
     x = 0
-    while x < 50:
+    while x < 100:
         for i in range(3):
             if li[i] - 1 >= 0:
                 li[i] = li[i] - 1
