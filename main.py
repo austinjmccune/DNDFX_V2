@@ -37,7 +37,7 @@ def cast(spell,origin,grid,dict):
             if shape == 'cube':
                 glow_effect(draw_cube(grid,origin,area),dict,rgb)
             elif shape == 'sphere':
-                set_led(draw_sphere(grid,origin,area),dict,rgb)
+                glow_effect(draw_sphere(grid,origin,area),dict,rgb)
             elif shape == 'cone':
                 direction = input("what direction?")
                 set_led(draw_cone(grid,origin,area,direction),dict,rgb)
