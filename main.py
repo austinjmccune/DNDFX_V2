@@ -375,6 +375,39 @@ def draw_line(grid,origin,area,direction):
                         print('out of bounds!')
                         pass
 
+            if direction == 'ne' or direction == 'NE':
+                if r - i >= 0 and c + i >= 0:
+                    try:
+                        aoe.append(grid[r - i][c + i])
+                    except Exception:
+                        print('out of bounds!')
+                        pass
+
+            if direction == 'nw' or direction == 'NW':
+                if r - i >= 0 and c - i >= 0:
+                    try:
+                        aoe.append(grid[r - i][c - i])
+                    except Exception:
+                        print('out of bounds!')
+                        pass
+
+            if direction == 'se' or direction == 'SE':
+                if r + i >= 0 and c + i >= 0:
+                    try:
+                        aoe.append(grid[r + i][c + i])
+                    except Exception:
+                        print('out of bounds!')
+                        pass
+
+            if direction == 'sw' or direction == 'SW':
+                if r + i >= 0 and c - i >= 0:
+                    try:
+                        aoe.append(grid[r + i][c - i])
+                    except Exception:
+                        print('out of bounds!')
+                        pass
+
+
 
     return aoe
 
