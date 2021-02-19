@@ -85,6 +85,17 @@ def glow_effect(grid,dict,rgb):
             time.sleep(0.05)
             pixels.show()
         x = x+1
+    while x >= 0:
+        for i in range(3):
+            if li[i] + 1 <= 255:
+                li[i] = li[i] + 1
+        rgb = tuple(li)
+        for i in grid:
+            pixels[dict[i]] = rgb
+            time.sleep(0.05)
+            pixels.show()
+        x = x-1
+
 
 
 
