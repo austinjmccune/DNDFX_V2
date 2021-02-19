@@ -85,7 +85,6 @@ def glow_effect(grid,dict,rgb):
             rgb = tuple(li)
             for i in grid:
                 pixels[dict[i]] = rgb
-                time.sleep(0.05)
                 pixels.show()
             time.sleep(0.1)
             x = x+1
@@ -97,7 +96,6 @@ def glow_effect(grid,dict,rgb):
             rgb = tuple(li)
             for i in grid:
                 pixels[dict[i]] = rgb
-                time.sleep(0.05)
                 pixels.show()
             time.sleep(0.1)
             x = x-1
