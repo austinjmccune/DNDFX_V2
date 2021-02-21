@@ -43,7 +43,7 @@ def cast(spell,origin,grid,dict):
                 glow_effect(draw_sphere(grid,origin,area),dict,rgb)
             elif shape == 'cone':
                 direction = input("what direction?")
-                set_led(draw_cone(grid,origin,area,direction),dict,rgb)
+                expand_effect(draw_cone(grid,origin,area,direction),dict,rgb)
             elif shape == 'line':
                 direction = input("what direction?")
                 set_led(draw_line(grid,origin,area,direction),dict,rgb)
@@ -100,6 +100,11 @@ def glow_effect(grid,dict,rgb):
             time.sleep(0.4)
             x = x-1
 
+def expand_effect(grid,dict,rgb):
+    for i in grid:
+        pixels[dict[i]] = rgb
+        pixels.show()
+        time.sleep(1)
 
 
 
