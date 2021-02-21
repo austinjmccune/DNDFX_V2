@@ -87,7 +87,6 @@ def glow_effect(grid,dict,rgb):
             for i in range(3):
                 if li[i] - 10 > 0:
                     li[i] = round(li[i] - 10)
-
             rgb = tuple(li)
             for i in grid:
                 pixels[dict[i]] = rgb
@@ -98,7 +97,6 @@ def glow_effect(grid,dict,rgb):
             for i in range(3):
                 if li[i] + 10 <= 255 and li[i] > 0:
                     li[i] = li[i] + 10
-
             rgb = tuple(li)
             for i in grid:
                 pixels[dict[i]] = rgb
@@ -515,7 +513,7 @@ led_dict = assign_leds(grid)
 while True:
     round_over = input('end of the round? y/n')
     if round_over == 'y':
-        kill_them_all()
+        kill_them_all(processes)
     spell = input('what spell do you want to cast?')
     origin = input('where would you like to cast it?')
     p = multiprocessing.Process(target=cast,args=[spell,origin,grid,led_dict])
