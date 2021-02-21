@@ -516,7 +516,7 @@ while True:
             kill_them_all(processes)
         spell = input('what spell do you want to cast?')
         origin = input('where would you like to cast it?')
-        executor.submit(cast,args=[spell,origin,grid,led_dict])
+        executor.submit(cast,spell,origin,grid,led_dict)
         #cast(spell,origin,grid,led_dict)
 
 
