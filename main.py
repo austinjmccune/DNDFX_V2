@@ -10,7 +10,6 @@ import time
 import board
 import neopixel
 
-import multiprocessing
 
 pixel_pin = board.D10
 
@@ -25,8 +24,7 @@ pixels = neopixel.NeoPixel(
     pixel_pin, num_pixels, brightness=0.2, auto_write=False, pixel_order=ORDER
 )
 
-#keep a list of processes to be wiped at the end of a round
-processes = []
+
 
 def cast(spell,origin,grid,dict):
     for x in spells_root.findall('spell'):
@@ -73,9 +71,8 @@ def assign_leds(grid):
 
 def set_led(grid,dict,rgb):
     for i in grid:
-        while True:
-            pixels[dict[i]] = rgb
-            pixels.show()
+        pixels[dict[i]] = rgb
+        pixels.show()
 
 def glow_effect(grid,dict,rgb):
     li = list(rgb)
