@@ -40,7 +40,7 @@ def cast(spell,origin,grid,dict):
                     rgb = eval(y.find('rgb').text)
 
             if shape == 'cube':
-                glow_effect(draw_cube(grid,origin,area),dict,rgb)
+                set_led(draw_cube(grid,origin,area),dict,rgb)
             elif shape == 'sphere':
                 glow_effect(draw_sphere(grid,origin,area),dict,rgb)
             elif shape == 'cone':
