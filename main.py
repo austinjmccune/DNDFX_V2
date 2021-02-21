@@ -519,6 +519,7 @@ while True:
         origin = input('where would you like to cast it?')
         processes.append(multiprocessing.Process(target=cast,args=[spell,origin,grid,led_dict]))
         processes[i].start()
+        processes[i].join()
         print(len(processes))
         #cast(spell,origin,grid,led_dict)
 
