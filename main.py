@@ -506,7 +506,7 @@ led_dict = assign_leds(grid)
 while True:
         round_over = input('end of the round? y/n')
         if round_over == 'y':
-            kill_them_all(processes)
+            kill_them_all()
         spell = input('what spell do you want to cast?')
         origin = input('where would you like to cast it?')
         cast(spell,origin,grid,led_dict)
