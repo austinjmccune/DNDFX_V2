@@ -10,6 +10,8 @@ import time
 import board
 import neopixel
 
+import multiprocessing
+
 pixel_pin = board.D10
 
 # The number of NeoPixels
@@ -22,6 +24,9 @@ ORDER = neopixel.GRB
 pixels = neopixel.NeoPixel(
     pixel_pin, num_pixels, brightness=0.2, auto_write=False, pixel_order=ORDER
 )
+
+#keep a list of processes to be wiped at the end of a round
+processes = []
 
 def cast(spell,origin,grid,dict):
     for x in spells_root.findall('spell'):
@@ -37,7 +42,10 @@ def cast(spell,origin,grid,dict):
             if shape == 'cube':
                 glow_effect(draw_cube(grid,origin,area),dict,rgb)
             elif shape == 'sphere':
-                glow_effect(draw_sphere(grid,origin,area),dict,rgb)
+                p = multiprocessing.Process(target=glow_effect, args=[draw_sphere(grid,origin,area),dict,rgb])
+                p.start()
+                processes.append(p)
+                #glow_effect(draw_sphere(grid,origin,area),dict,rgb)
             elif shape == 'cone':
                 direction = input("what direction?")
                 set_led(draw_cone(grid,origin,area,direction),dict,rgb)
@@ -76,7 +84,8 @@ def glow_effect(grid,dict,rgb):
     li = list(rgb)
     x = 0
     t_end = time.time() + 60
-    while time.time() < t_end:
+    #while time.time() < t_end:
+    while True:
         while x < 3:
             for i in range(3):
                 if li[i] - 10 > 0:
@@ -445,7 +454,10 @@ def draw_line(grid,origin,area,direction):
 
     return aoe
 
-
+def kill_them_all(running_processes):
+    for process in running_processes:
+        process.terminate()
+    processes.clear()
 
 def make_grid(r):
     linea = []
@@ -504,6 +516,9 @@ led_dict = assign_leds(grid)
 while True:
     spell = input('what spell do you want to cast?')
     origin = input('where would you like to cast it?')
+    round_over = input('end of the round? y/n')
+    if round_over == 'y':
+        kill_them_all()
     cast(spell,origin,grid,led_dict)
 
 
