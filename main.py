@@ -104,7 +104,7 @@ def expand_effect(grid,dict,rgb):
     for i in grid:
         pixels[dict[i]] = rgb
         pixels.show()
-        time.sleep(1)
+        time.sleep(.05)
 
 
 
@@ -450,7 +450,7 @@ def draw_line(grid,origin,area,direction):
 
     return aoe
 
-def kill_them_all(running_processes):
+def kill_them_all():
     pixels.fill((0, 0, 0))
     pixels.show()
 
