@@ -521,6 +521,7 @@ while True:
     p = multiprocessing.Process(target=cast,args=[spell,origin,grid,led_dict])
     p.start()
     processes.append(p)
+    print('end of lines')
     #cast(spell,origin,grid,led_dict)
 
 
