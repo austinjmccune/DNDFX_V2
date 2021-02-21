@@ -80,9 +80,8 @@ def set_led(grid,dict,rgb):
 def glow_effect(grid,dict,rgb):
     li = list(rgb)
     x = 0
-    t_end = time.time() + 60
-    #while time.time() < t_end:
-    while True:
+    t_end = time.time() + 10
+    while time.time() < t_end:
         while x < 3:
             for i in range(3):
                 if li[i] - 10 > 0:
@@ -450,9 +449,6 @@ def draw_line(grid,origin,area,direction):
     return aoe
 
 def kill_them_all(running_processes):
-    for process in running_processes:
-        process.terminate()
-    processes.clear()
     pixels.fill((0, 0, 0))
     pixels.show()
 
@@ -511,17 +507,12 @@ def find_in_list_of_list(mylist, char):
 grid = make_grid(4)
 led_dict = assign_leds(grid)
 while True:
-    for i in range(100):
         round_over = input('end of the round? y/n')
         if round_over == 'y':
             kill_them_all(processes)
         spell = input('what spell do you want to cast?')
         origin = input('where would you like to cast it?')
-        processes.append(multiprocessing.Process(target=cast,args=[spell,origin,grid,led_dict]))
-        processes[i].start()
-        processes[i].join()
-        print(len(processes))
-        #cast(spell,origin,grid,led_dict)
+        cast(spell,origin,grid,led_dict)
 
 
 
