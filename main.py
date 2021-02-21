@@ -517,8 +517,10 @@ while True:
         spell = input('what spell do you want to cast?')
         origin = input('where would you like to cast it?')
         processes.append(multiprocessing.Process(target=cast,args=[spell,origin,grid,led_dict]))
-        processes.append(multiprocessing.Process(target=cast, args=['blast','a0',grid,led_dict]))
+        p = (multiprocessing.Process(target=cast, args=['blast','a0',grid,led_dict]))
         processes[i].start()
+        processes.append(p)
+        p.start()
         print('end of lines')
         #cast(spell,origin,grid,led_dict)
 
