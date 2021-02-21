@@ -10,7 +10,7 @@ import time
 import board
 import neopixel
 
-import multiprocessing
+import concurrent.futures
 
 pixel_pin = board.D10
 
@@ -510,18 +510,13 @@ def find_in_list_of_list(mylist, char):
 grid = make_grid(4)
 led_dict = assign_leds(grid)
 while True:
-    for i in range(100):
+    with concurrent.futures.ProcessPoolExecutor() as executor:
         round_over = input('end of the round? y/n')
         if round_over == 'y':
             kill_them_all(processes)
         spell = input('what spell do you want to cast?')
         origin = input('where would you like to cast it?')
-        processes.append(multiprocessing.Process(target=cast,args=[spell,origin,grid,led_dict]))
-        p = (multiprocessing.Process(target=cast, args=['blast','a0',grid,led_dict]))
-        processes[i].start()
-        processes.append(p)
-        p.start()
-        print('end of lines')
+        executor.submit(cast,args=[spell,origin,grid,led_dict])
         #cast(spell,origin,grid,led_dict)
 
 
