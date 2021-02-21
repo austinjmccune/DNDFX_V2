@@ -42,10 +42,7 @@ def cast(spell,origin,grid,dict):
             if shape == 'cube':
                 glow_effect(draw_cube(grid,origin,area),dict,rgb)
             elif shape == 'sphere':
-                p = multiprocessing.Process(target=glow_effect, args=[draw_sphere(grid,origin,area),dict,rgb])
-                p.start()
-                processes.append(p)
-                #glow_effect(draw_sphere(grid,origin,area),dict,rgb)
+                glow_effect(draw_sphere(grid,origin,area),dict,rgb)
             elif shape == 'cone':
                 direction = input("what direction?")
                 set_led(draw_cone(grid,origin,area,direction),dict,rgb)
@@ -458,6 +455,8 @@ def kill_them_all(running_processes):
     for process in running_processes:
         process.terminate()
     processes.clear()
+    pixels.fill((0, 0, 0))
+    pixels.show()
 
 def make_grid(r):
     linea = []
@@ -514,12 +513,15 @@ def find_in_list_of_list(mylist, char):
 grid = make_grid(4)
 led_dict = assign_leds(grid)
 while True:
-    spell = input('what spell do you want to cast?')
-    origin = input('where would you like to cast it?')
     round_over = input('end of the round? y/n')
     if round_over == 'y':
         kill_them_all()
-    cast(spell,origin,grid,led_dict)
+    spell = input('what spell do you want to cast?')
+    origin = input('where would you like to cast it?')
+    p = multiprocessing.Process(target=cast,args=[spell,origin,grid,led_dict])
+    p.start()
+    processes.append(p)
+    #cast(spell,origin,grid,led_dict)
 
 
 
