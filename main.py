@@ -533,10 +533,10 @@ def home():
     form = Form()
 
     if request.method == 'POST':
-        spell = form.spell.data
-        origin = form.origin.data
+        spell = str(form.spell.data)
+        origin = str(form.origin.data)
         print(spell, origin)
-        #cast(spell,origin,grid,led_dict)
+        cast(spell,origin,grid,led_dict)
 
     return render_template("index.html", form=form)
 
