@@ -535,7 +535,8 @@ def home():
     if request.method == 'POST':
         spell = form.spell.data
         origin = form.origin.data
-        cast(spell,origin,grid,led_dict)
+        print(spell, origin)
+        #cast(spell,origin,grid,led_dict)
 
     return render_template("index.html", form=form)
 
