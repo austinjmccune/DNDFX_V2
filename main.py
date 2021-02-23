@@ -533,14 +533,14 @@ def home():
     form = Form()
 
     if request.method == 'POST':
-        value = form.test.data
+        value = form.spell.data
         print(value)
 
     return render_template("index.html", form=form)
 
 class Form(FlaskForm):
     spell = SelectField('spell', choices= li, default='')
-    origin = SelectField('origin', choices= grid)
+
 
 
 if __name__ == "__main__":
