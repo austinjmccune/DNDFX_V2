@@ -533,14 +533,15 @@ def home():
     form = Form()
 
     if request.method == 'POST':
-        value = form.spell.data
-        print(value)
+        spell = form.spell.data
+        origin = form.origin.data
+        cast(spell,origin,grid,led_dict)
 
     return render_template("index.html", form=form)
 
 class Form(FlaskForm):
     spell = SelectField('spell', choices= li, default='')
-    origin = SelectField('origin', choices= ['t1','t2'], default='')
+    origin = SelectField('origin', choices= ['a0','a1','c3'], default='')
 
 
 if __name__ == "__main__":
