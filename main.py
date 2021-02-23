@@ -540,7 +540,7 @@ def home():
 
 class Form(FlaskForm):
     spell = SelectField('spell', choices= li, default='')
-
+    origin = SelectField('origin', choices= grid, default='')
 
 
 if __name__ == "__main__":
