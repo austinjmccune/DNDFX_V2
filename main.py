@@ -1,3 +1,9 @@
+#Flask Imports
+from flask import Flask, redirect,url_for,render_template,request
+from flask_wtf import FlaskForm
+from wtforms import SelectField
+
+# XML imports
 import xml.etree.ElementTree as ET
 #spells xml file parsing
 spells_tree = ET.parse('spells.xml')
@@ -6,6 +12,7 @@ spells_root = spells_tree.getroot()
 colors_tree = ET.parse('colors.xml')
 colors_root = colors_tree.getroot()
 
+#Led contorl imports
 import time
 import board
 import neopixel
@@ -507,15 +514,48 @@ def find_in_list_of_list(mylist, char):
             return (mylist.index(sub_list), sub_list.index(char))
     raise ValueError("'{char}' is not in list".format(char = char))
 
+
 grid = make_grid(4)
 led_dict = assign_leds(grid)
-while True:
-        round_over = input('end of the round? y/n')
-        if round_over == 'y':
-            kill_them_all()
-        spell = input('what spell do you want to cast?')
-        origin = input('where would you like to cast it?')
-        cast(spell,origin,grid,led_dict)
+
+#Start web functions
+
+app = Flask(__name__)
+app.config['SECRET_KEY'] = 'secret'
+
+li = []
+for x in spells_root.findall('spell'):
+    li.append(x.find('name').text)
+
+
+@app.route("/", methods=['GET', 'POST'])
+def home():
+    form = Form()
+
+    if request.method == 'POST':
+        value = form.test.data
+        print(value)
+
+    return render_template("index.html", form=form)
+
+class Form(FlaskForm):
+    spell = SelectField('spell', choices= li, default='')
+    origin = SelectField('origin', choices= grid)
+
+
+if __name__ == "__main__":
+    app.run()
+
+
+
+#start APP
+#while True:
+ #       round_over = input('end of the round? y/n')
+  #      if round_over == 'y':
+   #         kill_them_all()
+    #    spell = input('what spell do you want to cast?')
+     #   origin = input('where would you like to cast it?')
+      #  cast(spell,origin,grid,led_dict)
 
 
 
