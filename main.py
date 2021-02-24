@@ -33,7 +33,7 @@ pixels = neopixel.NeoPixel(
 
 
 
-def cast(spell,origin,grid,dict):
+def cast(spell,origin,direction,grid,dict):
     for x in spells_root.findall('spell'):
         if spell == x.find('name').text:
             name = x.find('name').text
@@ -49,10 +49,8 @@ def cast(spell,origin,grid,dict):
             elif shape == 'sphere':
                 glow_effect(draw_sphere(grid,origin,area),dict,rgb)
             elif shape == 'cone':
-                direction = input("what direction?")
                 expand_effect(draw_cone(grid,origin,area,direction),dict,rgb)
             elif shape == 'line':
-                direction = input("what direction?")
                 set_led(draw_line(grid,origin,area,direction),dict,rgb)
 
 
@@ -536,6 +534,7 @@ def home():
         if "cast" in request.form:
             spell = str(form.spell.data)
             origin = str(form.origin.data)
+            direction = str(form.direction.data)
             print(spell, origin)
             cast(spell,origin,grid,led_dict)
         elif "end" in request.form:
@@ -546,6 +545,7 @@ def home():
 class Form(FlaskForm):
     spell = SelectField('spell', choices= li, default='')
     origin = SelectField('origin', choices= [item for sublist in grid for item in sublist], default='')
+    direction = SelectField('direction', choices=['N','NE','NW','E','W','S','SE','SW'])
 
 
 if __name__ == "__main__":
