@@ -533,12 +533,12 @@ def home():
     form = Form()
 
     if request.method == 'POST':
-        if request.form['submit_button'] == 'cast':
+        if "cast" in request.form:
             spell = str(form.spell.data)
             origin = str(form.origin.data)
             print(spell, origin)
             cast(spell,origin,grid,led_dict)
-        elif request.form['submit_button'] == 'end':
+        elif "end" in request.form:
             kill_them_all()
 
     return render_template("index.html", form=form)
