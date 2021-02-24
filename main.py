@@ -545,7 +545,7 @@ def home():
 class Form(FlaskForm):
     spell = SelectField('spell', choices= li, default='')
     origin = SelectField('origin', choices= [item for sublist in grid for item in sublist], default='')
-    direction = SelectField('direction', choices=['N','NE','NW','E','W','S','SE','SW'])
+    direction = SelectField('direction', choices=['','N','NE','NW','E','W','S','SE','SW'], default='')
 
 
 if __name__ == "__main__":
