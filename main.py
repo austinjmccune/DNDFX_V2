@@ -110,7 +110,7 @@ def expand_effect(grid,dict,rgb):
         pixels[dict[i]] = rgb
         pixels.show()
         time.sleep(.05)
-    glow_effect(grid,dict,rgb)
+    #glow_effect(grid,dict,rgb)
 
 
 
