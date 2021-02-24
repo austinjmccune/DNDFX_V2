@@ -33,7 +33,7 @@ pixels = neopixel.NeoPixel(
 
 
 
-def cast(spell,origin,direction,grid,dict):
+def cast(spell,origin,grid,direction,dict):
     for x in spells_root.findall('spell'):
         if spell == x.find('name').text:
             name = x.find('name').text
