@@ -545,7 +545,7 @@ def home():
 
 class Form(FlaskForm):
     spell = SelectField('spell', choices= li, default='')
-    origin = SelectField('origin', choices= ['a0','a1','c3'], default='')
+    origin = SelectField('origin', choices= [item for sublist in grid for item in sublist], default='')
 
 
 if __name__ == "__main__":
