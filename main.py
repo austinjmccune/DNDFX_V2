@@ -536,7 +536,7 @@ def home():
             origin = str(form.origin.data)
             direction = str(form.direction.data)
             print(spell, origin)
-            cast(spell,origin,grid,led_dict)
+            cast(spell,origin,grid,direction,led_dict)
         elif "end" in request.form:
             kill_them_all()
 
