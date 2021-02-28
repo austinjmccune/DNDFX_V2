@@ -2,14 +2,17 @@
 
     <color>
        <name>red</name>
+        <damage_type></damage_type>
        <rgb>(255,0,0)</rgb>
     </color>
     <color>
        <name>orange</name>
+        <damage_type>Fire</damage_type>
        <rgb>(255,69,0)</rgb>
     </color>
     <color>
        <name>green</name>
+        <damage_type>Necrotic</damage_type>
        <rgb>(0,255,0)</rgb>
     </color>
     <color>

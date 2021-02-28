@@ -37,11 +37,11 @@ def cast(spell,origin,grid,direction,dict):
     for x in spells_root.findall('spell'):
         if spell == x.find('name').text:
             name = x.find('name').text
-            area = int(x.find('area').text)
+            area = int(x.find('aoe').text)
             shape = x.find('shape').text
-            color = x.find('color').text
+            damage_type = x.find('damage_type').text
             for y in colors_root.findall('color'):
-                if color == y.find('name').text:
+                if damage_type == y.find('damage_type').text:
                     rgb = eval(y.find('rgb').text)
 
             if shape == 'cube':
