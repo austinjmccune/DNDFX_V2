@@ -1,9 +1,69 @@
 <data>
 
     <color>
+       <name>lime_green</name>
+        <damage_type>Acid</damage_type>
+       <rgb>(127,255,0)</rgb>
+    </color>
+    <color>
+       <name>yellow</name>
+        <damage_type>Additional</damage_type>
+       <rgb>(255,255,0)</rgb>
+    </color>
+    <color>
+       <name>purple</name>
+        <damage_type>Banishment</damage_type>
+       <rgb>(153,50,204)</rgb>
+    </color>
+    <color>
+       <name>grey</name>
+        <damage_type>Blinded</damage_type>
+       <rgb>(128,128,128)</rgb>
+    </color>
+    <color>
        <name>red</name>
-        <damage_type></damage_type>
-       <rgb>(255,0,0)</rgb>
+        <damage_type>Bludgeoning</damage_type>
+       <rgb>(139,0,0)</rgb>
+    </color>
+    <color>
+       <name>light_yellow</name>
+        <damage_type>Buff</damage_type>
+       <rgb>(255,255,102)</rgb>
+    </color>
+    <color>
+       <name>pink</name>
+        <damage_type>Charmed</damage_type>
+       <rgb>(255,192,203)</rgb>
+    </color>
+    <color>
+       <name>light_blue</name>
+        <damage_type>Cold</damage_type>
+       <rgb>(165,242,243)</rgb>
+    </color>
+    <color>
+       <name>red</name>
+        <damage_type>Combat</damage_type>
+       <rgb>(139,0,0)</rgb>
+    </color>
+    <color>
+       <name>white</name>
+        <damage_type>Communication</damage_type>
+       <rgb>(255,255,255)</rgb>
+    </color>
+    <color>
+       <name>blue</name>
+        <damage_type>Control</damage_type>
+       <rgb>(255,255,102)</rgb>
+    </color>
+    <color>
+       <name>blue</name>
+        <damage_type>Deafened</damage_type>
+       <rgb>(255,255,102)</rgb>
+    </color>
+    <color>
+       <name>light_yellow</name>
+        <damage_type>Creation</damage_type>
+       <rgb>(30,144,255)</rgb>
     </color>
     <color>
        <name>orange</name>
@@ -14,14 +74,6 @@
        <name>green</name>
         <damage_type>Necrotic</damage_type>
        <rgb>(0,255,0)</rgb>
-    </color>
-    <color>
-       <name>blue</name>
-       <rgb>(0,0,255)</rgb>
-    </color>
-    <color>
-       <name>purple</name>
-       <rgb>(128,0,128)</rgb>
     </color>
 
 </data>
