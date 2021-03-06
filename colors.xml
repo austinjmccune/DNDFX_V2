@@ -56,14 +56,40 @@
        <rgb>(255,255,102)</rgb>
     </color>
     <color>
+       <name>light_yellow</name>
+        <damage_type>Creation</damage_type>
+       <rgb>(30,144,255)</rgb>
+    </color>
+    <color>
        <name>blue</name>
         <damage_type>Deafened</damage_type>
        <rgb>(255,255,102)</rgb>
     </color>
+    #redo colors
     <color>
-       <name>light_yellow</name>
-        <damage_type>Creation</damage_type>
-       <rgb>(30,144,255)</rgb>
+       <name>blue</name>
+        <damage_type>Debuff</damage_type>
+       <rgb>(255,255,102)</rgb>
+    </color>
+    <color>
+       <name>blue</name>
+        <damage_type>Deception</damage_type>
+       <rgb>(255,255,102)</rgb>
+    </color>
+    <color>
+       <name>blue</name>
+        <damage_type>Dunamancy</damage_type>
+       <rgb>(255,255,102)</rgb>
+    </color>
+    <color>
+       <name>blue</name>
+        <damage_type>Environment</damage_type>
+       <rgb>(255,255,102)</rgb>
+    </color>
+    <color>
+       <name>blue</name>
+        <damage_type>Exploration</damage_type>
+       <rgb>(255,255,102)</rgb>
     </color>
     <color>
        <name>orange</name>
@@ -71,9 +97,130 @@
        <rgb>(255,69,0)</rgb>
     </color>
     <color>
+       <name>blue</name>
+        <damage_type>Foreknowledge</damage_type>
+       <rgb>(255,255,102)</rgb>
+    </color>
+    <color>
+       <name>blue</name>
+        <damage_type>Frightened</damage_type>
+       <rgb>(255,255,102)</rgb>
+    </color>
+    <color>
+       <name>blue</name>
+        <damage_type>Healing</damage_type>
+       <rgb>(255,255,102)</rgb>
+    </color>
+    <color>
+       <name>blue</name>
+        <damage_type>Invisible</damage_type>
+       <rgb>(255,255,102)</rgb>
+    </color>
+    <color>
+       <name>blue</name>
+        <damage_type>Lightning</damage_type>
+       <rgb>(255,255,102)</rgb>
+    </color>
+    <color>
+       <name>blue</name>
+        <damage_type>Movement</damage_type>
+       <rgb>(255,255,102)</rgb>
+    </color>
+    <color>
        <name>green</name>
         <damage_type>Necrotic</damage_type>
        <rgb>(0,255,0)</rgb>
     </color>
+    <color>
+       <name>blue</name>
+        <damage_type>Negation</damage_type>
+       <rgb>(255,255,102)</rgb>
+    </color>
+    <color>
+       <name>blue</name>
+        <damage_type>Paralyzed</damage_type>
+       <rgb>(255,255,102)</rgb>
+    </color>
+    <color>
+       <name>blue</name>
+        <damage_type>Petrified</damage_type>
+       <rgb>(255,255,102)</rgb>
+    </color>
+    <color>
+       <name>blue</name>
+        <damage_type>Piercing</damage_type>
+       <rgb>(255,255,102)</rgb>
+    </color>
+    <color>
+       <name>blue</name>
+        <damage_type>Poison</damage_type>
+       <rgb>(255,255,102)</rgb>
+    </color>
+    <color>
+       <name>blue</name>
+        <damage_type>Prone</damage_type>
+       <rgb>(255,255,102)</rgb>
+    </color>
+    <color>
+       <name>blue</name>
+        <damage_type>Psychic</damage_type>
+       <rgb>(255,255,102)</rgb>
+    </color>
+    <color>
+       <name>blue</name>
+        <damage_type>Radiant</damage_type>
+       <rgb>(255,255,102)</rgb>
+    </color>
+    <color>
+       <name>blue</name>
+        <damage_type>Shapechanging</damage_type>
+       <rgb>(255,255,102)</rgb>
+    </color>
+    <color>
+       <name>blue</name>
+        <damage_type>Slashing</damage_type>
+       <rgb>(255,255,102)</rgb>
+    </color>
+    <color>
+       <name>blue</name>
+        <damage_type>Social</damage_type>
+       <rgb>(255,255,102)</rgb>
+    </color>
+    <color>
+       <name>blue</name>
+        <damage_type>Stunned</damage_type>
+       <rgb>(255,255,102)</rgb>
+    </color>
+    <color>
+       <name>blue</name>
+        <damage_type>Summoning</damage_type>
+       <rgb>(255,255,102)</rgb>
+    </color>
+    <color>
+       <name>blue</name>
+        <damage_type>Teleportation</damage_type>
+       <rgb>(255,255,102)</rgb>
+    </color>
+    <color>
+       <name>blue</name>
+        <damage_type>Thunder</damage_type>
+       <rgb>(255,255,102)</rgb>
+    </color>
+    <color>
+       <name>blue</name>
+        <damage_type>Unconscious</damage_type>
+       <rgb>(255,255,102)</rgb>
+    </color>
+    <color>
+       <name>blue</name>
+        <damage_type>Utility</damage_type>
+       <rgb>(255,255,102)</rgb>
+    </color>
+    <color>
+       <name>blue</name>
+        <damage_type>Warding</damage_type>
+       <rgb>(255,255,102)</rgb>
+    </color>
+
 
 </data>

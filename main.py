@@ -44,9 +44,9 @@ def cast(spell,origin,grid,direction,dict):
                 if damage_type == y.find('damage_type').text:
                     rgb = eval(y.find('rgb').text)
 
-            if shape == 'cube':
+            if shape == 'cube' or shape == 'square':
                 set_led(draw_cube(grid,origin,area),dict,rgb)
-            elif shape == 'sphere':
+            elif shape == 'sphere' or shape == 'cylinder':
                 glow_effect(draw_sphere(grid,origin,area),dict,rgb)
             elif shape == 'cone':
                 expand_effect(draw_cone(grid,origin,area,direction),dict,rgb)
@@ -189,6 +189,8 @@ def draw_cube(grid,origin,area):
 
     elif area == 0:
         aoe.append(grid[r][c])
+    else:
+        aoe.append(grid[r][c])
 
     return aoe
 
@@ -274,6 +276,8 @@ def draw_sphere(grid,origin,area):
             except Exception:
                 print('out of bounds!')
                 pass
+    else:
+        aoe.append(grid[r][c])
 
     return aoe
 
@@ -305,7 +309,7 @@ def draw_cone(grid,origin,area,direction):
                         print('out of bounds!')
                         pass
         #North West Cone
-        if direction == 'nw' or direction == 'NW':
+        elif direction == 'nw' or direction == 'NW':
             for i in range(1,4):
                 if r - 1 >= 0 and c - i >=0:
                     try:
@@ -326,7 +330,7 @@ def draw_cone(grid,origin,area,direction):
                         print('out of bounds!')
                         pass
         #South West Cone
-        if direction == 'sw' or direction == 'SW':
+        elif direction == 'sw' or direction == 'SW':
             for i in range(1,4):
                 if c - i >= 0:
                     try:
@@ -348,7 +352,7 @@ def draw_cone(grid,origin,area,direction):
                         pass
 
         # South East Cone
-        if direction == 'se' or direction == 'SE':
+        elif direction == 'se' or direction == 'SE':
             for i in range(1,3):
                 if i == 1:
                     try:
@@ -380,6 +384,8 @@ def draw_cone(grid,origin,area,direction):
                     except Exception:
                         print('out of bounds!')
                         pass
+        else:
+            aoe.append(grid[r][c])
 
     return aoe
 
@@ -396,7 +402,7 @@ def draw_line(grid,origin,area,direction):
                     except Exception:
                         print('out of bounds!')
                         pass
-            if direction == 's' or direction == 'S':
+            elif direction == 's' or direction == 'S':
                 if r + i >= 0:
                     try:
                         aoe.append(grid[r + i][c])
@@ -404,7 +410,7 @@ def draw_line(grid,origin,area,direction):
                         print('out of bounds!')
                         pass
 
-            if direction == 'e' or direction == 'E':
+            elif direction == 'e' or direction == 'E':
                 if c + i >= 0:
                     try:
                         aoe.append(grid[r][c + i])
@@ -412,7 +418,7 @@ def draw_line(grid,origin,area,direction):
                         print('out of bounds!')
                         pass
 
-            if direction == 'w' or direction == 'W':
+            elif direction == 'w' or direction == 'W':
                 if c - i >= 0:
                     try:
                         aoe.append(grid[r][c - i])
@@ -420,7 +426,7 @@ def draw_line(grid,origin,area,direction):
                         print('out of bounds!')
                         pass
 
-            if direction == 'ne' or direction == 'NE':
+            elif direction == 'ne' or direction == 'NE':
                 if r - i >= 0 and c + i >= 0:
                     try:
                         aoe.append(grid[r - i][c + i])
@@ -428,7 +434,7 @@ def draw_line(grid,origin,area,direction):
                         print('out of bounds!')
                         pass
 
-            if direction == 'nw' or direction == 'NW':
+            elif direction == 'nw' or direction == 'NW':
                 if r - i >= 0 and c - i >= 0:
                     try:
                         aoe.append(grid[r - i][c - i])
@@ -436,7 +442,7 @@ def draw_line(grid,origin,area,direction):
                         print('out of bounds!')
                         pass
 
-            if direction == 'se' or direction == 'SE':
+            elif direction == 'se' or direction == 'SE':
                 if r + i >= 0 and c + i >= 0:
                     try:
                         aoe.append(grid[r + i][c + i])
@@ -444,14 +450,15 @@ def draw_line(grid,origin,area,direction):
                         print('out of bounds!')
                         pass
 
-            if direction == 'sw' or direction == 'SW':
+            elif direction == 'sw' or direction == 'SW':
                 if r + i >= 0 and c - i >= 0:
                     try:
                         aoe.append(grid[r + i][c - i])
                     except Exception:
                         print('out of bounds!')
                         pass
-
+            else:
+                aoe.append(grid[r][c])
 
 
     return aoe
