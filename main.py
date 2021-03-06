@@ -121,7 +121,7 @@ def draw_cube(grid,origin,area):
     tup = find_in_list_of_list(grid,origin)
     r , c = tup
     aoe = []
-    if area == 10:
+    if area == 20:
         for i in range(4):
             if (r-2 >= 0) and ((c + 1 - i) >= 0):
                 try:
@@ -147,22 +147,22 @@ def draw_cube(grid,origin,area):
                 except Exception:
                     print('out of bounds!')
                     pass
-    elif area == 20:
-        for i in range(8):
-            try:
-                aoe.append(grid[r-4][c+3-i])
-                aoe.append(grid[r-3][c+3-i])
-                aoe.append(grid[r-2][c+3-i])
-                aoe.append(grid[r-1][c+3-i])
-                aoe.append(grid[r][c+3-i])
-                aoe.append(grid[r+1][c+3-i])
-                aoe.append(grid[r+2][c+3-i])
-                aoe.append(grid[r+3][c+3-i])
-            except Exception:
-                print('out of bounds!')
-                pass
+    #elif area == 20:
+        #for i in range(8):
+          #  try:
+          #      aoe.append(grid[r-4][c+3-i])
+          #      aoe.append(grid[r-3][c+3-i])
+         #       aoe.append(grid[r-2][c+3-i])
+          #      aoe.append(grid[r-1][c+3-i])
+          #      aoe.append(grid[r][c+3-i])
+          #      aoe.append(grid[r+1][c+3-i])
+          #      aoe.append(grid[r+2][c+3-i])
+          #      aoe.append(grid[r+3][c+3-i])
+          #  except Exception:
+            #    print('out of bounds!')
+            #    pass
 
-    elif area == 5:
+    elif area == 10:
         try:
             aoe.append(grid[r][c])
         except Exception:
@@ -200,7 +200,7 @@ def draw_sphere(grid,origin,area):
     tup = find_in_list_of_list(grid,origin)
     r , c = tup
     aoe = []
-    if area == 10:
+    if area == 20:
         for i in range(4):
             if (i == 0) or (i == 3):
                 if (c + 1 - i) >= 0:
@@ -252,7 +252,7 @@ def draw_sphere(grid,origin,area):
           #  aoe.append(grid[r+2][c+3-i])
           #  aoe.append(grid[r+3][c+3-i])
 
-    elif area == 5:
+    elif area == 10:
         try:
             aoe.append(grid[r][c])
         except Exception:
