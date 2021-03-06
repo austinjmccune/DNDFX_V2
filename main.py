@@ -240,17 +240,17 @@ def draw_sphere(grid,origin,area):
                     except Exception:
                         print('out of bounds!')
                         pass
-    elif area == 20:
+    #elif area == 20:
         #WORK ON THIS WHEN YOU GET A BIGGER BOARD. YOU WILL NEED TO MAKE IF 0 OR 7, ELIF 3 OR 4, ELSE LOGIC TO PRINT THE ROWS CORRECTLY.
-        for i in range(8):
-            aoe.append(grid[r-4][c+3-i])
-            aoe.append(grid[r-3][c+3-i])
-            aoe.append(grid[r-2][c+3-i])
-            aoe.append(grid[r-1][c+3-i])
-            aoe.append(grid[r][c+3-i])
-            aoe.append(grid[r+1][c+3-i])
-            aoe.append(grid[r+2][c+3-i])
-            aoe.append(grid[r+3][c+3-i])
+       # for i in range(8):
+          #  aoe.append(grid[r-4][c+3-i])
+          #  aoe.append(grid[r-3][c+3-i])
+         #   aoe.append(grid[r-2][c+3-i])
+          #  aoe.append(grid[r-1][c+3-i])
+          #  aoe.append(grid[r][c+3-i])
+          #  aoe.append(grid[r+1][c+3-i])
+          #  aoe.append(grid[r+2][c+3-i])
+          #  aoe.append(grid[r+3][c+3-i])
 
     elif area == 5:
         try:
