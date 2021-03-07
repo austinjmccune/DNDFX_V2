@@ -393,104 +393,105 @@ def draw_cone(grid,origin,area,direction):
                     except Exception:
                         print('out of bounds!')
                         pass
+    elif area == 30:
+        if direction == 'ne' or direction == 'NE':
+            for i in range(1, 4):
+                if r - i >= 0:
+                    try:
+                        aoe.append(grid[r - i][c])
+                    except Exception:
+                        print('out of bounds!')
+                        pass
+                if r - 2 >= 0 and (c + i - 1) >= 0 and i < 3:
+                    try:
+                        aoe.append(grid[r - 2][c + i - 1])
+                    except Exception:
+                        print('out of bounds!')
+                        pass
+                if r - 1 >= 0 and (c + i - 1) >= 0:
+                    try:
+                        aoe.append(grid[r - 1][c + i - 1])
+                    except Exception:
+                        print('out of bounds!')
+                        pass
+        # North West Cone
+        elif direction == 'nw' or direction == 'NW':
+            for i in range(1, 4):
+                if r - 1 >= 0 and c - i >= 0:
+                    try:
+                        aoe.append(grid[r - 1][c - i])
+                    except Exception:
+                        print('out of bounds!')
+                        pass
+                if r - 2 >= 0 and (c - i) >= 0 and i < 3:
+                    try:
+                        aoe.append(grid[r - 2][c - i])
+                    except Exception:
+                        print('out of bounds!')
+                        pass
+                if r - 3 >= 0 and (c - 1) >= 0 and i == 1:
+                    try:
+                        aoe.append(grid[r - 3][c - 1])
+                    except Exception:
+                        print('out of bounds!')
+                        pass
+        # South West Cone
+        elif direction == 'sw' or direction == 'SW':
+            for i in range(1, 4):
+                if c - i >= 0:
+                    try:
+                        aoe.append(grid[r][c - i])
+                    except Exception:
+                        print('out of bounds!')
+                        pass
+                if (r + i - 1) >= 0 and (c - 1) >= 0:
+                    try:
+                        aoe.append(grid[r + i - 1][c - 1])
+                    except Exception:
+                        print('out of bounds!')
+                        pass
+                if r + 1 >= 0 and (c - 2) >= 0 and i == 1:
+                    try:
+                        aoe.append(grid[r + 1][c - 2])
+                    except Exception:
+                        print('out of bounds!')
+                        pass
 
-        elif area == 30:
-            if direction == 'ne' or direction == 'NE':
-                for i in range(1, 4):
-                    if r - i >= 0:
+        # South East Cone
+        elif direction == 'se' or direction == 'SE':
+            for i in range(1, 3):
+                if i == 1:
+                    try:
+                        aoe.append(grid[r][c])
+                    except Exception:
+                        print('out of bounds!')
+                        pass
+                    if r + i >= 0 and c + i >= 0:
                         try:
-                            aoe.append(grid[r - i][c])
+                            aoe.append(grid[r + i][c + i])
                         except Exception:
                             print('out of bounds!')
                             pass
-                    if r - 2 >= 0 and (c + i - 1) >= 0 and i < 3:
-                        try:
-                            aoe.append(grid[r - 2][c + i - 1])
-                        except Exception:
-                            print('out of bounds!')
-                            pass
-                    if r - 1 >= 0 and (c + i - 1) >= 0:
-                        try:
-                            aoe.append(grid[r - 1][c + i - 1])
-                        except Exception:
-                            print('out of bounds!')
-                            pass
-            # North West Cone
-            elif direction == 'nw' or direction == 'NW':
-                for i in range(1, 4):
-                    if r - 1 >= 0 and c - i >= 0:
-                        try:
-                            aoe.append(grid[r - 1][c - i])
-                        except Exception:
-                            print('out of bounds!')
-                            pass
-                    if r - 2 >= 0 and (c - i) >= 0 and i < 3:
-                        try:
-                            aoe.append(grid[r - 2][c - i])
-                        except Exception:
-                            print('out of bounds!')
-                            pass
-                    if r - 3 >= 0 and (c - 1) >= 0 and i == 1:
-                        try:
-                            aoe.append(grid[r - 3][c - 1])
-                        except Exception:
-                            print('out of bounds!')
-                            pass
-            # South West Cone
-            elif direction == 'sw' or direction == 'SW':
-                for i in range(1, 4):
-                    if c - i >= 0:
-                        try:
-                            aoe.append(grid[r][c - i])
-                        except Exception:
-                            print('out of bounds!')
-                            pass
-                    if (r + i - 1) >= 0 and (c - 1) >= 0:
-                        try:
-                            aoe.append(grid[r + i - 1][c - 1])
-                        except Exception:
-                            print('out of bounds!')
-                            pass
-                    if r + 1 >= 0 and (c - 2) >= 0 and i == 1:
-                        try:
-                            aoe.append(grid[r + 1][c - 2])
-                        except Exception:
-                            print('out of bounds!')
-                            pass
+                if (c + i) >= 0 and i < 3:
+                    try:
+                        aoe.append(grid[r][c + i])
+                    except Exception:
+                        print('out of bounds!')
+                        pass
+                if r + 1 >= 0:
+                    try:
+                        aoe.append(grid[r + i][c])
+                    except Exception:
+                        print('out of bounds!')
+                        pass
+                if r + i >= 0:
+                    try:
+                        aoe.append(grid[r + i][c])
+                    except Exception:
+                        print('out of bounds!')
+                        pass
 
-            # South East Cone
-            elif direction == 'se' or direction == 'SE':
-                for i in range(1, 3):
-                    if i == 1:
-                        try:
-                            aoe.append(grid[r][c])
-                        except Exception:
-                            print('out of bounds!')
-                            pass
-                        if r + i >= 0 and c + i >= 0:
-                            try:
-                                aoe.append(grid[r + i][c + i])
-                            except Exception:
-                                print('out of bounds!')
-                                pass
-                    if (c + i) >= 0 and i < 3:
-                        try:
-                            aoe.append(grid[r][c + i])
-                        except Exception:
-                            print('out of bounds!')
-                            pass
-                    if r + 1 >= 0:
-                        try:
-                            aoe.append(grid[r + i][c])
-                        except Exception:
-                            print('out of bounds!')
-                            pass
-                    if r + i >= 0:
-                        try:
-                            aoe.append(grid[r + i][c])
-                        except Exception:
-                            print('out of bounds!')
-                            pass
+
         else:
             aoe.append(grid[r][c])
         #make 30ft cone
