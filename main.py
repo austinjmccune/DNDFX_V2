@@ -439,49 +439,49 @@ def draw_cone(grid,origin,area,direction):
             for square in (draw_cone(grid, grid[r][c + 3], 15, 'se')):
                 aoe.append(square)
 
-        elif area == 60:
-            if direction == 'ne' or direction == 'NE':
-                for square in (draw_cone(grid, origin, 30, 'ne')):
-                    aoe.append(square)
-                for square in (draw_cone(grid, grid[r - 6][c + 6], 30, 'sw')):
-                    aoe.append(square)
-                for square in (draw_cone(grid, grid[r - 6][c], 30, 'ne')):
-                    aoe.append(square)
-                for square in (draw_cone(grid, grid[r][c + 6], 30, 'ne')):
-                    aoe.append(square)
+    elif area == 60:
+        if direction == 'ne' or direction == 'NE':
+            for square in (draw_cone(grid, origin, 30, 'ne')):
+                aoe.append(square)
+            for square in (draw_cone(grid, grid[r - 6][c + 6], 30, 'sw')):
+                aoe.append(square)
+            for square in (draw_cone(grid, grid[r - 6][c], 30, 'ne')):
+                aoe.append(square)
+            for square in (draw_cone(grid, grid[r][c + 6], 30, 'ne')):
+                aoe.append(square)
 
 
-            # North West Cone
-            elif direction == 'nw' or direction == 'NW':
-                for square in (draw_cone(grid, origin, 30, 'nw')):
-                    aoe.append(square)
-                for square in (draw_cone(grid, grid[r - 6][c - 6], 30, 'se')):
-                    aoe.append(square)
-                for square in (draw_cone(grid, grid[r - 6][c], 30, 'nw')):
-                    aoe.append(square)
-                for square in (draw_cone(grid, grid[r][c - 6], 30, 'nw')):
-                    aoe.append(square)
-            # South West Cone
-            elif direction == 'sw' or direction == 'SW':
-                for square in (draw_cone(grid, origin, 30, 'sw')):
-                    aoe.append(square)
-                for square in (draw_cone(grid, grid[r + 6][c - 6], 30, 'ne')):
-                    aoe.append(square)
-                for square in (draw_cone(grid, grid[r + 6][c], 30, 'sw')):
-                    aoe.append(square)
-                for square in (draw_cone(grid, grid[r][c - 6], 30, 'sw')):
-                    aoe.append(square)
+        # North West Cone
+        elif direction == 'nw' or direction == 'NW':
+            for square in (draw_cone(grid, origin, 30, 'nw')):
+                aoe.append(square)
+            for square in (draw_cone(grid, grid[r - 6][c - 6], 30, 'se')):
+                aoe.append(square)
+            for square in (draw_cone(grid, grid[r - 6][c], 30, 'nw')):
+                aoe.append(square)
+            for square in (draw_cone(grid, grid[r][c - 6], 30, 'nw')):
+                aoe.append(square)
+        # South West Cone
+        elif direction == 'sw' or direction == 'SW':
+            for square in (draw_cone(grid, origin, 30, 'sw')):
+                aoe.append(square)
+            for square in (draw_cone(grid, grid[r + 6][c - 6], 30, 'ne')):
+                aoe.append(square)
+            for square in (draw_cone(grid, grid[r + 6][c], 30, 'sw')):
+                aoe.append(square)
+            for square in (draw_cone(grid, grid[r][c - 6], 30, 'sw')):
+                aoe.append(square)
 
-            # South East Cone
-            elif direction == 'se' or direction == 'SE':
-                for square in (draw_cone(grid, origin, 30, 'se')):
-                    aoe.append(square)
-                for square in (draw_cone(grid, grid[r + 6][c + 6], 30, 'nw')):
-                    aoe.append(square)
-                for square in (draw_cone(grid, grid[r + 6][c], 30, 'se')):
-                    aoe.append(square)
-                for square in (draw_cone(grid, grid[r][c + 6], 30, 'se')):
-                    aoe.append(square)
+        # South East Cone
+        elif direction == 'se' or direction == 'SE':
+            for square in (draw_cone(grid, origin, 30, 'se')):
+                aoe.append(square)
+            for square in (draw_cone(grid, grid[r + 6][c + 6], 30, 'nw')):
+                aoe.append(square)
+            for square in (draw_cone(grid, grid[r + 6][c], 30, 'se')):
+                aoe.append(square)
+            for square in (draw_cone(grid, grid[r][c + 6], 30, 'se')):
+                aoe.append(square)
 
 
         else:
