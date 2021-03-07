@@ -173,6 +173,11 @@
     </color>
     <color>
        <name>blue</name>
+        <damage_type>Restrained</damage_type>
+       <rgb>(255,255,102)</rgb>
+    </color>
+    <color>
+       <name>blue</name>
         <damage_type>Shapechanging</damage_type>
        <rgb>(255,255,102)</rgb>
     </color>
