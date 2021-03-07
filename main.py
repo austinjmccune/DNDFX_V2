@@ -397,10 +397,14 @@ def draw_cone(grid,origin,area,direction):
     #need a bigger board to work on this.
     elif area == 30:
         if direction == 'ne' or direction == 'NE':
-            aoe.append(draw_cone(grid,origin,15,'ne'))
-            aoe.append(draw_cone(grid,grid[r-1][c+1],15,'ne'))
-            aoe.append(draw_cone(grid, grid[r - 3][c], 15, 'ne'))
-            aoe.append(draw_cone(grid, grid[r][c + 3], 15, 'ne'))
+            for square in (draw_cone(grid,origin,15,'ne')):
+                aoe.append(square)
+            for square in (draw_cone(grid,grid[r-1][c+1],15,'ne')):
+                aoe.append(square)
+            for square in (draw_cone(grid, grid[r - 3][c], 15, 'ne')):
+                aoe.append(square)
+            for square in (draw_cone(grid, grid[r][c + 3], 15, 'ne')):
+                aoe.append(square)
 
 
         # North West Cone
