@@ -395,7 +395,7 @@ def draw_cone(grid,origin,area,direction):
                         pass
     elif area == 30:
         if direction == 'ne' or direction == 'NE':
-            for i in range(1, 4):
+            for i in range(1, 6):
                 if r - i >= 0:
                     try:
                         aoe.append(grid[r - i][c])
@@ -416,7 +416,7 @@ def draw_cone(grid,origin,area,direction):
                         pass
         # North West Cone
         elif direction == 'nw' or direction == 'NW':
-            for i in range(1, 4):
+            for i in range(1, 6):
                 if r - 1 >= 0 and c - i >= 0:
                     try:
                         aoe.append(grid[r - 1][c - i])
@@ -437,7 +437,7 @@ def draw_cone(grid,origin,area,direction):
                         pass
         # South West Cone
         elif direction == 'sw' or direction == 'SW':
-            for i in range(1, 4):
+            for i in range(1, 6):
                 if c - i >= 0:
                     try:
                         aoe.append(grid[r][c - i])
@@ -459,7 +459,7 @@ def draw_cone(grid,origin,area,direction):
 
         # South East Cone
         elif direction == 'se' or direction == 'SE':
-            for i in range(1, 3):
+            for i in range(1, 6):
                 if i == 1:
                     try:
                         aoe.append(grid[r][c])
