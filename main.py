@@ -121,7 +121,7 @@ def draw_cube(grid,origin,area):
     tup = find_in_list_of_list(grid,origin)
     r , c = tup
     aoe = []
-    if area == 20:
+    if area == 10:
         for i in range(4):
             if (r-2 >= 0) and ((c + 1 - i) >= 0):
                 try:
@@ -162,7 +162,7 @@ def draw_cube(grid,origin,area):
             #    print('out of bounds!')
             #    pass
 
-    elif area == 10:
+    elif area == 5:
         try:
             aoe.append(grid[r][c])
         except Exception:
@@ -191,6 +191,8 @@ def draw_cube(grid,origin,area):
         aoe.append(grid[r][c])
     else:
         aoe.append(grid[r][c])
+
+    #make a 100 ft cube (yikes)
 
     return aoe
 
@@ -240,6 +242,10 @@ def draw_sphere(grid,origin,area):
                     except Exception:
                         print('out of bounds!')
                         pass
+    #make a 15 ft sphere
+    #make a 30 ft sphere
+    #make a 40 ft sphere
+    #make a 60 ft sphere
     #elif area == 20:
         #WORK ON THIS WHEN YOU GET A BIGGER BOARD. YOU WILL NEED TO MAKE IF 0 OR 7, ELIF 3 OR 4, ELSE LOGIC TO PRINT THE ROWS CORRECTLY.
        # for i in range(8):
@@ -386,6 +392,7 @@ def draw_cone(grid,origin,area,direction):
                         pass
         else:
             aoe.append(grid[r][c])
+        # make 60ft cone
 
     return aoe
 
