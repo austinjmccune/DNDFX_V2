@@ -394,7 +394,7 @@ def draw_cone(grid,origin,area,direction):
                         print('out of bounds!')
                         pass
 
-    #need a bigger board to work on this.
+    #need a bigger board to work on this. adding anyway
     elif area == 30:
         if direction == 'ne' or direction == 'NE':
             for square in (draw_cone(grid,origin,15,'ne')):
