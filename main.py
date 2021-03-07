@@ -397,9 +397,9 @@ def draw_cone(grid,origin,area,direction):
     #need a bigger board to work on this.
     elif area == 30:
         if direction == 'ne' or direction == 'NE':
-            draw_cone(grid,grid[r][c],15,'ne')
-            draw_cone(grid, grid[r][c + 1], 15, 'ne')
-            draw_cone(grid, grid[r-1][c], 15, 'ne')
+            draw_cone(grid,str(grid[r][c]),'15','ne')
+            draw_cone(grid, str(grid[r][c + 1]), '15', 'ne')
+            draw_cone(grid, str(grid[r-1][c]), '15', 'ne')
         # North West Cone
         elif direction == 'nw' or direction == 'NW':
             for i in range(1, 6):
