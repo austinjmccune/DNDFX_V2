@@ -397,9 +397,25 @@ def draw_cone(grid,origin,area,direction):
     #need a bigger board to work on this.
     elif area == 30:
         if direction == 'ne' or direction == 'NE':
-            draw_cone(grid,'d1','15','ne')
-            draw_cone(grid, 'd2', '15', 'ne')
-            draw_cone(grid, 'c1', '15', 'ne')
+            for i in range(1, 6):
+                if r - i >= 0:
+                    try:
+                        aoe.append(grid[r - i][c])
+                    except Exception:
+                        print('out of bounds!')
+                        pass
+                if r - 2 >= 0 and (c + i - 1) >= 0 and i < 3:
+                    try:
+                        aoe.append(grid[r - 2][c + i - 1])
+                    except Exception:
+                        print('out of bounds!')
+                        pass
+                if r - 1 >= 0 and (c + i - 1) >= 0:
+                    try:
+                        aoe.append(grid[r - 1][c + i - 1])
+                    except Exception:
+                        print('out of bounds!')
+                        pass
         # North West Cone
         elif direction == 'nw' or direction == 'NW':
             for i in range(1, 6):
