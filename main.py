@@ -398,214 +398,90 @@ def draw_cone(grid,origin,area,direction):
     elif area == 30:
         if direction == 'ne' or direction == 'NE':
             for square in (draw_cone(grid,origin,15,'ne')):
-               try:
-                   aoe.append(square)
-               except Exception:
-                   print('out of bounds!')
-                   pass
+                aoe.append(square)
             for square in (draw_cone(grid,grid[r-1][c+1],15,'ne')):
-                try:
-                    aoe.append(square)
-                except Exception:
-                    print('out of bounds!')
-                    pass
+                aoe.append(square)
             for square in (draw_cone(grid, grid[r - 3][c], 15, 'ne')):
-                try:
-                    aoe.append(square)
-                except Exception:
-                    print('out of bounds!')
-                    pass
+                aoe.append(square)
             for square in (draw_cone(grid, grid[r][c + 3], 15, 'ne')):
-                try:
-                    aoe.append(square)
-                except Exception:
-                    print('out of bounds!')
-                    pass
+                aoe.append(square)
 
 
         # North West Cone
         elif direction == 'nw' or direction == 'NW':
             for square in (draw_cone(grid,origin,15,'nw')):
-                try:
-                    aoe.append(square)
-                except Exception:
-                    print('out of bounds!')
-                    pass
+                aoe.append(square)
             for square in (draw_cone(grid,grid[r-1][c-1],15,'nw')):
-                try:
-                    aoe.append(square)
-                except Exception:
-                    print('out of bounds!')
-                    pass
+                aoe.append(square)
             for square in (draw_cone(grid, grid[r - 3][c], 15, 'nw')):
-                try:
-                    aoe.append(square)
-                except Exception:
-                    print('out of bounds!')
-                    pass
+                aoe.append(square)
             for square in (draw_cone(grid, grid[r][c - 3], 15, 'nw')):
                 aoe.append(square)
         # South West Cone
         elif direction == 'sw' or direction == 'SW':
             for square in (draw_cone(grid,origin,15,'sw')):
-                try:
-                    aoe.append(square)
-                except Exception:
-                    print('out of bounds!')
-                    pass
+                aoe.append(square)
             for square in (draw_cone(grid,grid[r+1][c-1],15,'sw')):
-                try:
-                    aoe.append(square)
-                except Exception:
-                    print('out of bounds!')
-                    pass
+                aoe.append(square)
             for square in (draw_cone(grid, grid[r + 3][c], 15, 'sw')):
-                try:
-                    aoe.append(square)
-                except Exception:
-                    print('out of bounds!')
-                    pass
+                aoe.append(square)
             for square in (draw_cone(grid, grid[r][c - 3], 15, 'sw')):
-                try:
-                    aoe.append(square)
-                except Exception:
-                    print('out of bounds!')
-                    pass
+                aoe.append(square)
 
         # South East Cone
         elif direction == 'se' or direction == 'SE':
             for square in (draw_cone(grid,origin,15,'se')):
-                try:
-                    aoe.append(square)
-                except Exception:
-                    print('out of bounds!')
-                    pass
+                aoe.append(square)
             for square in (draw_cone(grid,grid[r+1][c+1],15,'se')):
-                try:
-                    aoe.append(square)
-                except Exception:
-                    print('out of bounds!')
-                    pass
+                aoe.append(square)
             for square in (draw_cone(grid, grid[r + 3][c], 15, 'se')):
-                try:
-                    aoe.append(square)
-                except Exception:
-                    print('out of bounds!')
-                    pass
+                aoe.append(square)
             for square in (draw_cone(grid, grid[r][c + 3], 15, 'se')):
-                try:
-                    aoe.append(square)
-                except Exception:
-                    print('out of bounds!')
-                    pass
+                aoe.append(square)
 
     elif area == 60:
         if direction == 'ne' or direction == 'NE':
             for square in (draw_cone(grid, origin, 30, 'ne')):
-                try:
-                    aoe.append(square)
-                except Exception:
-                    print('out of bounds!')
-                    pass
+                aoe.append(square)
             for square in (draw_cone(grid, grid[r - 6][c + 6], 30, 'sw')):
-                try:
-                    aoe.append(square)
-                except Exception:
-                    print('out of bounds!')
-                    pass
+                aoe.append(square)
             for square in (draw_cone(grid, grid[r - 6][c], 30, 'ne')):
-                try:
-                    aoe.append(square)
-                except Exception:
-                    print('out of bounds!')
-                    pass
+                aoe.append(square)
             for square in (draw_cone(grid, grid[r][c + 6], 30, 'ne')):
-                try:
-                    aoe.append(square)
-                except Exception:
-                    print('out of bounds!')
-                    pass
+                aoe.append(square)
 
 
         # North West Cone
         elif direction == 'nw' or direction == 'NW':
             for square in (draw_cone(grid, origin, 30, 'nw')):
-                try:
-                    aoe.append(square)
-                except Exception:
-                    print('out of bounds!')
-                    pass
+                aoe.append(square)
             for square in (draw_cone(grid, grid[r - 6][c - 6], 30, 'se')):
-                try:
-                    aoe.append(square)
-                except Exception:
-                    print('out of bounds!')
-                    pass
+                aoe.append(square)
             for square in (draw_cone(grid, grid[r - 6][c], 30, 'nw')):
-                try:
-                    aoe.append(square)
-                except Exception:
-                    print('out of bounds!')
-                    pass
+                aoe.append(square)
             for square in (draw_cone(grid, grid[r][c - 6], 30, 'nw')):
-                try:
-                    aoe.append(square)
-                except Exception:
-                    print('out of bounds!')
-                    pass
+                aoe.append(square)
         # South West Cone
         elif direction == 'sw' or direction == 'SW':
             for square in (draw_cone(grid, origin, 30, 'sw')):
-                try:
-                    aoe.append(square)
-                except Exception:
-                    print('out of bounds!')
-                    pass
+                aoe.append(square)
             for square in (draw_cone(grid, grid[r + 6][c - 6], 30, 'ne')):
-                try:
-                    aoe.append(square)
-                except Exception:
-                    print('out of bounds!')
-                    pass
+                aoe.append(square)
             for square in (draw_cone(grid, grid[r + 6][c], 30, 'sw')):
-                try:
-                    aoe.append(square)
-                except Exception:
-                    print('out of bounds!')
-                    pass
+                aoe.append(square)
             for square in (draw_cone(grid, grid[r][c - 6], 30, 'sw')):
-                try:
-                    aoe.append(square)
-                except Exception:
-                    print('out of bounds!')
-                    pass
+                aoe.append(square)
 
         # South East Cone
         elif direction == 'se' or direction == 'SE':
             for square in (draw_cone(grid, origin, 30, 'se')):
-                try:
-                    aoe.append(square)
-                except Exception:
-                    print('out of bounds!')
-                    pass
+                aoe.append(square)
             for square in (draw_cone(grid, grid[r + 6][c + 6], 30, 'nw')):
-                try:
-                    aoe.append(square)
-                except Exception:
-                    print('out of bounds!')
-                    pass
+                aoe.append(square)
             for square in (draw_cone(grid, grid[r + 6][c], 30, 'se')):
-                try:
-                    aoe.append(square)
-                except Exception:
-                    print('out of bounds!')
-                    pass
+                aoe.append(square)
             for square in (draw_cone(grid, grid[r][c + 6], 30, 'se')):
-                try:
-                    aoe.append(square)
-                except Exception:
-                    print('out of bounds!')
-                    pass
+                aoe.append(square)
 
 
         else:
