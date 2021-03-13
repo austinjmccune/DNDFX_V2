@@ -3,7 +3,7 @@
     <color>
        <name>lime_green</name>
         <damage_type>Acid</damage_type>
-       <rgb>(127,255,0)</rgb>
+       <rgb>(143,254,9)</rgb>
     </color>
     <color>
        <name>yellow</name>
@@ -33,12 +33,12 @@
     <color>
        <name>pink</name>
         <damage_type>Charmed</damage_type>
-       <rgb>(255,192,203)</rgb>
+       <rgb>(255,30,127)</rgb>
     </color>
     <color>
        <name>light_blue</name>
         <damage_type>Cold</damage_type>
-       <rgb>(165,242,243)</rgb>
+       <rgb>(70,255,255)</rgb>
     </color>
     <color>
        <name>red</name>
@@ -53,7 +53,7 @@
     <color>
        <name>blue</name>
         <damage_type>Control</damage_type>
-       <rgb>(255,255,102)</rgb>
+       <rgb>(255,30,127)</rgb>
     </color>
     <color>
        <name>light_yellow</name>
@@ -77,9 +77,14 @@
        <rgb>(255,255,102)</rgb>
     </color>
     <color>
+       <name>white</name>
+        <damage_type>Detection</damage_type>
+       <rgb>(255,255,255)</rgb>
+    </color>
+    <color>
        <name>blue</name>
         <damage_type>Dunamancy</damage_type>
-       <rgb>(255,255,102)</rgb>
+       <rgb>(100,0,255)</rgb>
     </color>
     <color>
        <name>blue</name>
@@ -127,9 +132,9 @@
        <rgb>(255,255,102)</rgb>
     </color>
     <color>
-       <name>green</name>
+       <name>eletric_green</name>
         <damage_type>Necrotic</damage_type>
-       <rgb>(0,255,0)</rgb>
+       <rgb>(80,255,9)</rgb>
     </color>
     <color>
        <name>blue</name>
@@ -152,9 +157,9 @@
        <rgb>(255,255,102)</rgb>
     </color>
     <color>
-       <name>blue</name>
+       <name>Scheeles Green</name>
         <damage_type>Poison</damage_type>
-       <rgb>(255,255,102)</rgb>
+       <rgb>(71,136,0)</rgb>
     </color>
     <color>
        <name>blue</name>
