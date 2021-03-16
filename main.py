@@ -78,7 +78,7 @@ def assign_leds(grid):
     #previously 6
     columns = 19
     control_num = 0
-    for i in range(rows):
+    for i in range(-7,rows):
         if i == 0:
             pass
         elif i < 0 or i > 4:
@@ -88,7 +88,7 @@ def assign_leds(grid):
         else:
             control_num = control_num + 11
 
-        for j in range(columns):
+        for j in range(-7,columns):
             if i < 0 or i > 6:
                 pass
             elif (i %2) == 0:
