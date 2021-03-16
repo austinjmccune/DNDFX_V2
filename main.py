@@ -646,7 +646,6 @@ def home():
             direction = str(form.direction.data)
             print(spell, origin)
             cast(spell,origin,grid,direction,led_dict)
-            global counter
             counter = counter + 1
         elif "end" in request.form:
             kill_them_all()
