@@ -44,7 +44,7 @@ def cast(spell,origin,grid,direction,dict):
                 if damage_type == y.find('damage_type').text:
                     rgb = eval(y.find('rgb').text)
 
-            if shape == 'cube' or shape == 'square':
+            if shape == 'cube' or shape == 'square' or shape == 'None':
                 set_led(draw_cube(grid,origin,area),dict,rgb)
             elif shape == 'sphere' or shape == 'cylinder':
                 glow_effect(draw_sphere(grid,origin,area),dict,rgb)
@@ -122,7 +122,10 @@ def draw_cube(grid,origin,area):
     r , c = tup
     aoe = []
     if area == 5:
-        aoe.append(grid[r][c])
+        try:
+            aoe.append(grid[r][c])
+        except Exception:
+            print('out of bounds!')
 
     #elif area == 20:
         #for i in range(8):
@@ -193,7 +196,10 @@ def draw_cube(grid,origin,area):
 
 
     else:
-        aoe.append(grid[r][c])
+        try:
+            aoe.append(grid[r][c])
+        except Exception:
+            print('out of bounds!')
 
     #make a 100 ft cube (yikes)
 
@@ -286,7 +292,10 @@ def draw_sphere(grid,origin,area):
                 print('out of bounds!')
                 pass
     else:
-        aoe.append(grid[r][c])
+        try:
+            aoe.append(grid[r][c])
+        except Exception:
+            print('out of bounds!')
 
     return aoe
 
