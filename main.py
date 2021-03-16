@@ -670,11 +670,9 @@ def home():
             counter = 0
             active_spells.clear()
         elif "0" in request.form:
-            print("0")
+            print(request.form)
             del active_spells[0]
 
-        elif "{{ key }}" in request.form:
-            print("gg this sucks")
     return render_template("index.html", form=form, counter=counter, active_spells=active_spells)
 
 class Form(FlaskForm):
