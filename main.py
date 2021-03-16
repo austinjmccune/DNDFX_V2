@@ -606,44 +606,45 @@ def make_grid(r):
     lineb = []
     linec = []
     lined = []
-    #linee = []
-    #linef = []
-    #lineg = []
-    #lineh = []
-    #linei = []
-    #linej = []
-    #linek = []
-    #linel = []
+    linee = []
+    linef = []
+    lineg = []
+    lineh = []
+    linei = []
+    linej = []
+    linek = []
+    linel = []
 
     #this is plus 2 because I am working with a rectangle at the moment.
-    for i in range(r+2):
+    #testing ranges for off the board grid calls.
+    for i in range(-7,r+9):
 
         linea.append("a{}".format(i))
         lineb.append("b{}".format(i))
         linec.append("c{}".format(i))
         lined.append("d{}".format(i))
-        #linee.append("e{}".format(i))
-       #linef.append("f{}".format(i))
-        #lineg.append("g{}".format(i))
-        #lineh.append("h{}".format(i))
-        #linei.append("i{}".format(i))
-        #linej.append("j{}".format(i))
-        #linek.append("k{}".format(i))
-        #linel.append("l{}".format(i))
+        linee.append("e{}".format(i))
+        linef.append("f{}".format(i))
+        lineg.append("g{}".format(i))
+        lineh.append("h{}".format(i))
+        linei.append("i{}".format(i))
+        linej.append("j{}".format(i))
+        linek.append("k{}".format(i))
+        linel.append("l{}".format(i))
 
     grid = []
     grid.append(list(linea))
     grid.append(list(lineb))
     grid.append(list(linec))
     grid.append(list(lined))
-    #grid.append(list(linee))
-    #grid.append(list(linef))
-    #grid.append(list(lineg))
-    #grid.append(list(lineh))
-    #grid.append(list(linei))
-    #grid.append(list(linej))
-    #grid.append(list(linek))
-    #grid.append(list(linel))
+    grid.append(list(linee))
+    grid.append(list(linef))
+    grid.append(list(lineg))
+    grid.append(list(lineh))
+    grid.append(list(linei))
+    grid.append(list(linej))
+    grid.append(list(linek))
+    grid.append(list(linel))
 
     return grid
 
