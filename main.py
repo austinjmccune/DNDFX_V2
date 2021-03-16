@@ -638,7 +638,7 @@ for x in spells_root.findall('spell'):
 @app.route("/", methods=['GET', 'POST'])
 def home():
     form = Form()
-
+    counter = 0
     if request.method == 'POST':
         if "cast" in request.form:
             spell = str(form.spell.data)
@@ -646,10 +646,11 @@ def home():
             direction = str(form.direction.data)
             print(spell, origin)
             cast(spell,origin,grid,direction,led_dict)
+            counter = counter+1
         elif "end" in request.form:
             kill_them_all()
 
-    return render_template("index.html", form=form)
+    return render_template("index.html", form=form, counter=counter)
 
 class Form(FlaskForm):
     spell = SelectField('spell', choices= li, default='')
@@ -660,16 +661,6 @@ class Form(FlaskForm):
 if __name__ == "__main__":
     app.run(debug=True, port=8080, host='0.0.0.0')
 
-
-
-#start APP
-#while True:
- #       round_over = input('end of the round? y/n')
-  #      if round_over == 'y':
-   #         kill_them_all()
-    #    spell = input('what spell do you want to cast?')
-     #   origin = input('where would you like to cast it?')
-      #  cast(spell,origin,grid,led_dict)
 
 
 
