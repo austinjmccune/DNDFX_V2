@@ -670,7 +670,7 @@ def home():
             counter = 0
             active_spells.clear()
         for i in range(30):
-            if "0" in request.form:
+            if i in request.form:
                 print(request.form)
                 del active_spells[i]
 
