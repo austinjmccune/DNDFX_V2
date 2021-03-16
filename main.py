@@ -635,10 +635,12 @@ for x in spells_root.findall('spell'):
     li.append(x.find('name').text)
 
 counter = 0
+active_spells = {}
 @app.route("/", methods=['GET', 'POST'])
 def home():
     form = Form()
     global counter
+    global active_spells
     if request.method == 'POST':
         if "cast" in request.form:
             spell = str(form.spell.data)
@@ -646,11 +648,13 @@ def home():
             direction = str(form.direction.data)
             print(spell, origin)
             cast(spell,origin,grid,direction,led_dict)
+            active_spells[counter]=[spell,origin,grid,direction,led_dict]
             counter = counter + 1
         elif "end" in request.form:
             kill_them_all()
             counter = 0
-    return render_template("index.html", form=form, counter=counter)
+            active_spells.clear()
+    return render_template("index.html", form=form, counter=counter, active_spells=active_spells)
 
 class Form(FlaskForm):
     spell = SelectField('spell', choices= li, default='')
