@@ -73,8 +73,8 @@ def remove_spell(spell,origin,grid,direction,dict):
 
 def assign_leds(grid):
     led_dict = {}
-    rows = 4
-    columns = 6
+    rows = 12
+    columns = 19
     control_num = 0
     for i in range(rows):
         if i == 0:
