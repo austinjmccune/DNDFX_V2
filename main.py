@@ -670,6 +670,7 @@ def home():
             counter = 0
             active_spells.clear()
         elif "0" in request.form:
+            print("0")
             del active_spells[0]
     return render_template("index.html", form=form, counter=counter, active_spells=active_spells)
 
