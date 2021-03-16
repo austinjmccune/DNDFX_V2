@@ -49,7 +49,7 @@ def cast(spell,origin,grid,direction,dict):
             elif shape == 'sphere' or shape == 'cylinder':
                 glow_effect(draw_sphere(grid,origin,area),dict,rgb)
             elif shape == 'cone':
-                set_led(draw_cone(grid,origin,area,direction),dict,rgb)
+                expand_effect(draw_cone(grid,origin,area,direction),dict,rgb)
             elif shape == 'line':
                 set_led(draw_line(grid,origin,area,direction),dict,rgb)
 
@@ -73,25 +73,19 @@ def remove_spell(spell,origin,grid,direction,dict):
 
 def assign_leds(grid):
     led_dict = {}
-    #previously 4
-    rows = 12
-    #previously 6
-    columns = 19
+    rows = 4
+    columns = 6
     control_num = 0
-    for i in range(-7,rows):
+    for i in range(rows):
         if i == 0:
-            pass
-        elif i < 0 or i > 4:
             pass
         elif (i%2) == 0:
             control_num = control_num + 1
         else:
             control_num = control_num + 11
 
-        for j in range(-7,columns):
-            if i < 0 or i > 6:
-                pass
-            elif (i %2) == 0:
+        for j in range(columns):
+            if (i %2) == 0:
                 led_dict[grid[i][j]] = control_num + j
             else:
                 led_dict[grid[i][j]] = control_num - j
@@ -99,11 +93,8 @@ def assign_leds(grid):
 
 def set_led(grid,dict,rgb):
     for i in grid:
-        try:
-            pixels[dict[i]] = rgb
-            pixels.show()
-        except Exception:
-            pass
+        pixels[dict[i]] = rgb
+        pixels.show()
 
 def glow_effect(grid,dict,rgb):
     li = list(rgb)
@@ -615,45 +606,44 @@ def make_grid(r):
     lineb = []
     linec = []
     lined = []
-    linee = []
-    linef = []
-    lineg = []
-    lineh = []
-    linei = []
-    linej = []
-    linek = []
-    linel = []
+    #linee = []
+    #linef = []
+    #lineg = []
+    #lineh = []
+    #linei = []
+    #linej = []
+    #linek = []
+    #linel = []
 
     #this is plus 2 because I am working with a rectangle at the moment.
-    #testing ranges for off the board grid calls.
-    for i in range(-7,r+9):
+    for i in range(r+2):
 
         linea.append("a{}".format(i))
         lineb.append("b{}".format(i))
         linec.append("c{}".format(i))
         lined.append("d{}".format(i))
-        linee.append("e{}".format(i))
-        linef.append("f{}".format(i))
-        lineg.append("g{}".format(i))
-        lineh.append("h{}".format(i))
-        linei.append("i{}".format(i))
-        linej.append("j{}".format(i))
-        linek.append("k{}".format(i))
-        linel.append("l{}".format(i))
+        #linee.append("e{}".format(i))
+       #linef.append("f{}".format(i))
+        #lineg.append("g{}".format(i))
+        #lineh.append("h{}".format(i))
+        #linei.append("i{}".format(i))
+        #linej.append("j{}".format(i))
+        #linek.append("k{}".format(i))
+        #linel.append("l{}".format(i))
 
     grid = []
     grid.append(list(linea))
     grid.append(list(lineb))
     grid.append(list(linec))
     grid.append(list(lined))
-    grid.append(list(linee))
-    grid.append(list(linef))
-    grid.append(list(lineg))
-    grid.append(list(lineh))
-    grid.append(list(linei))
-    grid.append(list(linej))
-    grid.append(list(linek))
-    grid.append(list(linel))
+    #grid.append(list(linee))
+    #grid.append(list(linef))
+    #grid.append(list(lineg))
+    #grid.append(list(lineh))
+    #grid.append(list(linei))
+    #grid.append(list(linej))
+    #grid.append(list(linek))
+    #grid.append(list(linel))
 
     return grid
 
