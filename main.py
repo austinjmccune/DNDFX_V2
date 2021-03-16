@@ -649,7 +649,6 @@ def home():
             counter = counter + 1
         elif "end" in request.form:
             kill_them_all()
-            global counter
             counter = 0
     return render_template("index.html", form=form, counter=counter)
 
