@@ -15,6 +15,11 @@
             <input type="submit" name="end" value="End">
         </form>
     <p>Counter:{{ counter }}</p>
-    <p>active_spells: {{ active_spells }}</p>
+    <p>active_spells:% for key in active_spells.items:
+        <tr>
+        <td>${key}</td>
+        </tr>
+                    % endfor
+    </p>
     </body>
 </html>
