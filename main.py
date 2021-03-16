@@ -494,7 +494,10 @@ def draw_cone(grid,origin,area,direction):
 
 
         else:
-            aoe.append(grid[r][c])
+            try:
+                aoe.append(grid[r][c])
+            except Exception:
+                print('out of bounds!')
         #make 30ft cone
         # make 60ft cone
 
@@ -569,7 +572,10 @@ def draw_line(grid,origin,area,direction):
                         print('out of bounds!')
                         pass
             else:
-                aoe.append(grid[r][c])
+                try:
+                    aoe.append(grid[r][c])
+                except Exception:
+                    print('out of bounds!')
 
 
     return aoe
