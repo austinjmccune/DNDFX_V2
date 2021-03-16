@@ -103,6 +103,11 @@
     </color>
     <color>
        <name>blue</name>
+        <damage_type>Force</damage_type>
+       <rgb>(70,255,255)</rgb>
+    </color>
+    <color>
+       <name>blue</name>
         <damage_type>Foreknowledge</damage_type>
        <rgb>(255,255,102)</rgb>
     </color>
