@@ -15,15 +15,17 @@
             <input type="submit" name="end" value="End">
         </form>
     <p>Counter:{{ counter }}</p>
-    {% for key, value in active_spells %}
+    {% for key, values in active_spells %}
     <tr>
         <td> Key: {{ key }} </td>
-        {% for val in value %}
-    <tr>
-        <td>Value: {{val}}</td>
     </tr>
-    {% endfor %}
-    </tr>
+        {% for value in values %}
+        <tr>
+         <td>
+             Value: {{value}}
+         </td>
+        </tr>
+        {% endfor %}
     {% endfor %}
     </body>
 </html>
