@@ -49,7 +49,7 @@ def cast(spell,origin,grid,direction,dict):
             elif shape == 'sphere' or shape == 'cylinder':
                 glow_effect(draw_sphere(grid,origin,area),dict,rgb)
             elif shape == 'cone':
-                expand_effect(draw_cone(grid,origin,area,direction),dict,rgb)
+                set_led(draw_cone(grid,origin,area,direction),dict,rgb)
             elif shape == 'line':
                 set_led(draw_line(grid,origin,area,direction),dict,rgb)
 
