@@ -647,6 +647,7 @@ def home():
             cast(spell,origin,grid,direction,led_dict)
             counter = counter+1
         elif "end" in request.form:
+            counter = 0
             kill_them_all()
 
     return render_template("index.html", form=form, counter=counter)
