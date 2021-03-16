@@ -17,10 +17,12 @@
     <p>Counter:{{ counter }}</p>
     {% for key in active_spells %}
     <tr>
-        <td> Key: {{ key }} </td>
-        <td>Value: {{active_spells[key]}}</td>
-        <input type="submit" name="{{ key }}" value="Remove">
-        <br>
+        <form method="POST">
+            <td> Key: {{ key }} </td>
+            <td>Value: {{active_spells[key]}}</td>
+            <input type="submit" name="remove" value="Remove">
+            <br>
+        </form>
     </tr>
     {% endfor %}
     </body>

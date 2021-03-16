@@ -673,7 +673,7 @@ def home():
             print("0")
             del active_spells[0]
 
-        elif "{{ key }}" in request.form:
+        elif "remove" in request.form:
             print("gg this sucks")
     return render_template("index.html", form=form, counter=counter, active_spells=active_spells)
 
