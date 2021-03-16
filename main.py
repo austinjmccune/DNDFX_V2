@@ -669,6 +669,8 @@ def home():
             kill_them_all()
             counter = 0
             active_spells.clear()
+        elif "remove" in request.form:
+            pass
     return render_template("index.html", form=form, counter=counter, active_spells=active_spells)
 
 class Form(FlaskForm):
