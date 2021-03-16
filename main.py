@@ -634,8 +634,9 @@ li = []
 for x in spells_root.findall('spell'):
     li.append(x.find('name').text)
 
-counter = 0
+
 @app.route("/", methods=['GET', 'POST'])
+counter = 0
 def home():
     form = Form()
     if request.method == 'POST':
