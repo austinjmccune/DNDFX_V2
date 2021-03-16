@@ -634,11 +634,10 @@ li = []
 for x in spells_root.findall('spell'):
     li.append(x.find('name').text)
 
-
+counter = 0
 @app.route("/", methods=['GET', 'POST'])
 def home():
     form = Form()
-    counter = 0
     if request.method == 'POST':
         if "cast" in request.form:
             spell = str(form.spell.data)
