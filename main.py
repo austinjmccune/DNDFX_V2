@@ -93,8 +93,11 @@ def assign_leds(grid):
 
 def set_led(grid,dict,rgb):
     for i in grid:
-        pixels[dict[i]] = rgb
-        pixels.show()
+        try:
+            pixels[dict[i]] = rgb
+            pixels.show()
+        except Exception:
+            pass
 
 def glow_effect(grid,dict,rgb):
     li = list(rgb)
