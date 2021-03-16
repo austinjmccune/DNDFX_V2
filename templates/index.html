@@ -20,7 +20,7 @@
         <form method="POST">
             <td> Key: {{ key }} </td>
             <td>Value: {{active_spells[key]}}</td>
-            <input type="submit" name="remove" value="Remove">
+            <input type="submit" name="{{ key }}" value="Remove">
             <br>
         </form>
     </tr>
