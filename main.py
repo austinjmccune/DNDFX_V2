@@ -669,9 +669,10 @@ def home():
             kill_them_all()
             counter = 0
             active_spells.clear()
-        elif "0" in request.form:
-            print(request.form.first())
-            del active_spells[0]
+        for i in range(30):
+            if "0" in request.form:
+                print(request.form)
+                del active_spells[i]
 
     return render_template("index.html", form=form, counter=counter, active_spells=active_spells)
 
