@@ -53,6 +53,23 @@ def cast(spell,origin,grid,direction,dict):
             elif shape == 'line':
                 set_led(draw_line(grid,origin,area,direction),dict,rgb)
 
+def remove_spell(spell,origin,grid,direction,dict):
+    for x in spells_root.findall('spell'):
+        if spell == x.find('name').text:
+            name = x.find('name').text
+            area = int(x.find('aoe').text)
+            shape = x.find('shape').text
+            damage_type = x.find('damage_type').text
+            rgb = (0,0,0)
+
+            if shape == 'cube' or shape == 'square' or shape == 'None':
+                set_led(draw_cube(grid,origin,area),dict,rgb)
+            elif shape == 'sphere' or shape == 'cylinder':
+                set_led(draw_sphere(grid,origin,area),dict,rgb)
+            elif shape == 'cone':
+                set_led(draw_cone(grid,origin,area,direction),dict,rgb)
+            elif shape == 'line':
+                set_led(draw_line(grid,origin,area,direction),dict,rgb)
 
 def assign_leds(grid):
     led_dict = {}
@@ -672,6 +689,10 @@ def home():
         for i in range(30):
             if str(i) in request.form:
                 print(request.form)
+                spell = active_spells[i][0]
+                origin = active_spells[i][1]
+                direction = active_spells[2]
+                remove_spell(spell,origin,grid,direction,led_dict)
                 del active_spells[i]
 
     return render_template("index.html", form=form, counter=counter, active_spells=active_spells)
