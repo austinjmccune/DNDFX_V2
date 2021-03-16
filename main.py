@@ -648,7 +648,7 @@ def home():
             direction = str(form.direction.data)
             print(spell, origin)
             cast(spell,origin,grid,direction,led_dict)
-            active_spells[counter]=[spell,origin,grid,direction,led_dict]
+            active_spells[counter]=[spell,origin,grid,direction]
             counter = counter + 1
         elif "end" in request.form:
             kill_them_all()
