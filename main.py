@@ -691,7 +691,7 @@ def home():
                 print(request.form)
                 spell = active_spells[i][0]
                 origin = active_spells[i][1]
-                direction = active_spells[2]
+                direction = active_spells[i][2]
                 remove_spell(spell,origin,grid,direction,led_dict)
                 del active_spells[i]
 
