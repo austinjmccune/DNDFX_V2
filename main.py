@@ -634,7 +634,7 @@ li = []
 for x in spells_root.findall('spell'):
     li.append(x.find('name').text)
 
-
+global counter
 counter = 0
 @app.route("/", methods=['GET', 'POST'])
 def home():
