@@ -71,6 +71,26 @@ def remove_spell(spell,origin,grid,direction,dict):
             elif shape == 'line':
                 set_led(draw_line(grid,origin,area,direction),dict,rgb)
 
+def redraw_spells(spell,origin,grid,direction,dict):
+    for x in spells_root.findall('spell'):
+        if spell == x.find('name').text:
+            name = x.find('name').text
+            area = int(x.find('aoe').text)
+            shape = x.find('shape').text
+            damage_type = x.find('damage_type').text
+            for y in colors_root.findall('color'):
+                if damage_type == y.find('damage_type').text:
+                    rgb = eval(y.find('rgb').text)
+
+            if shape == 'cube' or shape == 'square' or shape == 'None':
+                set_led(draw_cube(grid,origin,area),dict,rgb)
+            elif shape == 'sphere' or shape == 'cylinder':
+                set_led(draw_sphere(grid,origin,area),dict,rgb)
+            elif shape == 'cone':
+                set_led(draw_cone(grid,origin,area,direction),dict,rgb)
+            elif shape == 'line':
+                set_led(draw_line(grid,origin,area,direction),dict,rgb)
+
 def assign_leds(grid):
     led_dict = {}
     rows = 4
@@ -694,6 +714,11 @@ def home():
                 direction = active_spells[i][2]
                 remove_spell(spell,origin,grid,direction,led_dict)
                 del active_spells[i]
+                for sp in active_spells:
+                    spell = active_spells[sp][0]
+                    origin = active_spells[sp][1]
+                    direction = active_spells[sp][2]
+                    redraw_spells(spell,origin,grid,direction,led_dict)
 
     return render_template("index.html", form=form, counter=counter, active_spells=active_spells)
 
